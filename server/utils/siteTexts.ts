@@ -1,10 +1,7 @@
 // Default page texts (hero headings/intros). The site_texts table stores admin overrides;
 // anything not overridden falls back to these. Keep keys in sync with the admin editor
 // (app/components/admin/GuideManager.vue) and the pages that read them.
-export interface SiteText {
-  cs: string
-  en: string
-}
+import type { SiteText } from '~~/shared/types/siteText'
 
 export const SITE_TEXT_DEFAULTS: Record<string, SiteText> = {
   'home.eyebrow': { cs: 'Nesebar · Bulharsko', en: 'Nessebar · Bulgaria' },

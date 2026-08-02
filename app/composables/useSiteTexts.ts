@@ -1,7 +1,4 @@
-interface SiteText {
-  cs: string
-  en: string
-}
+import type { SiteText } from '~~/shared/types/siteText'
 
 /**
  * Editable page texts (hero headings/intros) served from /api/site-texts.

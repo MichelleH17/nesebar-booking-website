@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import type { SiteText } from '~~/shared/types/siteText'
+
 interface Field { key: string, label: string, multiline?: boolean }
-interface SiteText { cs: string, en: string }
 
 const props = defineProps<{
   title: string
