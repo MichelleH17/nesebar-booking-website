@@ -25,3 +25,10 @@ logs
 
 # Real family names/emails and login passwords — local dev only, never committed
 server/db/seed.ts
+
+# Internal planning docs (specs/plans/briefs/reports/reviews) — local only
+docs/
+
+# Real uploaded photos — never commit, only the tracked placeholder-*.svg fallbacks
+public/uploads/*
+!public/uploads/placeholder-*.svg
