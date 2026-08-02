@@ -1,12 +1,5 @@
 <script setup lang="ts">
-interface Apartment {
-  id: string
-  name: string
-  nameEn: string
-  description: string
-  descriptionEn: string
-  capacity: number
-}
+import type { Apartment } from '~~/shared/types/apartment'
 
 defineProps<{
   apartments: Apartment[]

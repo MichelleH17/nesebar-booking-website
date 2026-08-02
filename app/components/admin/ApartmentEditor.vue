@@ -1,17 +1,5 @@
 <script setup lang="ts">
-interface Apartment {
-  id: string
-  label: string
-  name: string
-  nameEn: string
-  description: string
-  descriptionEn: string
-  capacity: number
-  nightlyRate: number
-  perPersonPricing: boolean
-  priceHidden: boolean
-  hidden: boolean
-}
+import type { Apartment } from '~~/shared/types/apartment'
 
 const { data: apartments, refresh } = useFetch<Apartment[]>('/api/apartments', { default: () => [] })
 
