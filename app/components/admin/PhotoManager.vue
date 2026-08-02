@@ -1,14 +1,5 @@
 <script setup lang="ts">
-interface Photo {
-  id: number
-  apartmentId: string | null
-  url: string
-  alt: string
-  altEn: string
-  sortOrder: number
-  hidden: boolean
-  onHomepage: boolean
-}
+import type { Photo } from '~~/shared/types/photo'
 
 // ?all=true so hidden photos are visible to admin here.
 const { data: photos, refresh } = useFetch<Photo[]>('/api/photos', { query: { all: 'true' }, default: () => [] })

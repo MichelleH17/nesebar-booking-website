@@ -1,10 +1,5 @@
 <script setup lang="ts">
-interface Photo {
-  id: number
-  url: string
-  alt: string
-  altEn: string
-}
+import type { Photo } from '~~/shared/types/photo'
 
 defineProps<{
   photos: Photo[]
