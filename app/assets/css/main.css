@@ -9,6 +9,7 @@
   --color-ink: #23261F;     /* header/footer text */
   --color-sea: #4A90A4;     /* brand blue — hero/CTA gradient base */
   --color-sea-deep: #2F6577;
+  --color-off-white: #FAF6EF; /* warm off-white — hero/CTA gradient end */
 
   --font-display: "Montserrat", sans-serif;
   --font-sans: "Montserrat", sans-serif;

@@ -11,11 +11,12 @@ Luxury-minimal, calm, photography-led — the Marina design system (established 
 **Reference pages:** `app/pages/index.vue` + `app/components/landing/*` — when styling any other page or component, match these.
 
 ## Palette (tokens in `@theme`, `app/assets/css/main.css`)
-These 7 are the only color tokens (audited 2026-07-23, every one in active use). The pre-Marina legacy palette (`paper`, `sage`, `teal`, `leaf`, …) and the `mist` duplicate were deleted; never reintroduce them — `mist` roles now use `cloud`.
+These 8 are the only color tokens (audited 2026-08-02, every one in active use). The pre-Marina legacy palette (`paper`, `sage`, `teal`, `leaf`, …) and the `mist` duplicate were deleted; never reintroduce them — `mist` roles now use `cloud`.
 - `--color-night #0D0F19` — near-black navy: headings, solid buttons, dark text on light
 - `--color-cloud #F0F0F0` — the single light grey: section bands, cards on white, hairline borders (`border-cloud`), hover fills
 - `--color-stone #59504F` — warm grey: body text on white
 - `--color-sea #4A90A4` / `--color-sea-deep #2F6577` — brand blue: hero/CTA gradients; `sea-deep` also for links, focus rings, `ocean` button, eyebrow/accent labels (`font-medium`), demo-mode banner, `night` button hover; `bg-sea/10 text-sea-deep` = info hint (the former `indigo` token was removed 2026-07-23 — `sea-deep` took all its roles)
+- `--color-off-white #FAF6EF` — warm off-white: hero/CTA gradient end (`from-sea to-off-white`) — never hardcode this hex, always use the token
 - `--color-surface #FFFFFF` (white surfaces), `--color-ink #23261F` (header/footer text, ghost button text)
 
 Contrast rules (WCAG AA): `night`/`stone` on white ✓, white on `night` ✓; never bright `sea` as text on light backgrounds.
@@ -33,7 +34,7 @@ Contrast rules (WCAG AA): `night`/`stone` on white ✓, white on `night` ✓; ne
 - **Buttons**: `UiBaseButton` Marina variants — `night`, `night-outline` (on light), `light`, `light-outline` (on photo/dark), `ocean` (brand-teal `sea-deep` solid, e.g. navbar Přihlásit, primary form submits), `ghost` (tertiary — back/cancel actions) — all `rounded-full` pills; Marina variants use uppercase tracked labels. Order convention: outline (secondary) first, solid (primary) second. These six are the only variants.
 - **Tab / segmented pills** (admin Správa, reservation toggles): active = solid `bg-night text-white` (or `bg-white` on a grey track); inactive = `border border-cloud bg-white text-stone`. Use a **border**, never `shadow-sm`, for the resting state — a rounded pill's shadow reads unevenly (sides only).
 - **Forms**: inputs/textareas/selects `rounded-xl border border-cloud bg-cloud/60 text-night`, focus `focus:border-sea-deep focus:bg-white focus:ring-2 focus:ring-sea-deep`; native file button `file:bg-cloud`; checkboxes `accent-sea-deep`; error text `text-red-700`.
-- **Hero / photo CTA**: section `relative isolate overflow-hidden` (the `isolate` is required — the `-z-10` image layer paints behind page backgrounds without it); image or `bg-gradient-to-br from-sea to-[#FAF6EF]` base + overlay `bg-gradient-to-t from-night/85 via-night/35 to-night/10`; white text, content `justify-end` bottom-left. CTA above footer = same look via pure CSS gradient (no photo, no baked-in text).
+- **Hero / photo CTA**: section `relative isolate overflow-hidden` (the `isolate` is required — the `-z-10` image layer paints behind page backgrounds without it); image or `bg-gradient-to-br from-sea to-off-white` base + overlay `bg-gradient-to-t from-night/85 via-night/35 to-night/10`; white text, content `justify-end` bottom-left. CTA above footer = same look via pure CSS gradient (no photo, no baked-in text).
 - **Header/footer**: white, `border-cloud` hairline, minimal. Navbar: logo left; right group = language, Kalendář, Rezervovat, user, Odhlásit pill, hamburger (secondary links live in a right-aligned `rounded-2xl` panel, max ~half width, roomy `gap-5`). Footer mirrors navbar (brand left, tagline right).
 - **Gallery tiles**: `rounded-2xl` overflow-hidden, `aspect-square object-cover`, image `hover:scale-[1.03]`.
 
