@@ -1,7 +1,7 @@
 import { and, eq, ne } from 'drizzle-orm'
 import { useDb } from '~~/server/db'
 import { reservations, mailRecipients, apartments } from '~~/server/db/schema'
-import { overlaps } from '~~/shared/utils/booking'
+import { overlaps, calcPrice, nights as nightsBetween } from '~~/shared/utils/booking'
 import type { SessionUser } from '~~/server/utils/session'
 
 const APARTMENTS = ['15B', '16B'] as const
@@ -55,18 +55,21 @@ export async function validateReservationInput(body: any): Promise<ReservationIn
 
   const notesValue = typeof notes === 'string' ? notes : ''
 
-  let priceValue: number | null = null
-  if (priceApplied !== null && priceApplied !== undefined) {
-    if (typeof priceApplied !== 'number' || !Number.isInteger(priceApplied) || priceApplied <= 0) {
-      throw createError({ statusCode: 400, message: 'Neplatná cena.' })
-    }
-    priceValue = priceApplied
+  // priceApplied from the client only signals paid-vs-free intent (checkbox state);
+  // the actual amount is always recomputed here from the apartment's rate — never
+  // trust a client-submitted number, it could be tampered with.
+  const wantsPaid = priceApplied !== null && priceApplied !== undefined
+  if (wantsPaid && (typeof priceApplied !== 'number' || !Number.isInteger(priceApplied) || priceApplied <= 0)) {
+    throw createError({ statusCode: 400, message: 'Neplatná cena.' })
   }
 
-  // Apartment with hidden pricing → stays are always recorded without a price.
-  if (priceValue !== null) {
+  let priceValue: number | null = null
+  if (wantsPaid) {
     const apartment = useDb().select().from(apartments).where(eq(apartments.id, apartmentId)).get()
-    if (apartment?.priceHidden) priceValue = null
+    // Apartment with hidden pricing → stays are always recorded without a price.
+    if (apartment && !apartment.priceHidden) {
+      priceValue = calcPrice(nightsBetween(arrival, departure), apartment.nightlyRate, people, apartment.perPersonPricing)
+    }
   }
 
   let notifyEmailsValue: string[] = []
