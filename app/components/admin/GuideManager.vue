@@ -1,17 +1,5 @@
 <script setup lang="ts">
-interface GuideItem {
-  id: number
-  type: 'beach' | 'trip' | 'info'
-  title: string
-  titleEn: string
-  description: string
-  descriptionEn: string
-  imageUrl: string | null
-  meta: string | null
-  metaEn: string | null
-  sortOrder: number
-  hidden: boolean
-}
+import type { GuideItem } from '~~/shared/types/guideItem'
 
 const OKOLI_HERO_FIELDS = [
   { key: 'okoli.line1', label: 'Nadpis – 1. řádek', multiline: false },

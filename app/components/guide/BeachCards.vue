@@ -1,17 +1,8 @@
 <script setup lang="ts">
+import type { GuideItem } from '~~/shared/types/guideItem'
+
 const { t } = useI18n()
 const loc = useLocalizedContent()
-
-interface GuideItem {
-  id: number
-  title: string
-  titleEn: string
-  description: string
-  descriptionEn: string
-  imageUrl: string | null
-  meta: string | null
-  metaEn: string | null
-}
 
 defineProps<{
   beaches: GuideItem[]
