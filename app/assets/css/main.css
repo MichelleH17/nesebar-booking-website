@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  /* Marina design system (homepage = reference) */
+  --color-night: #0D0F19;   /* near-black navy — headings, solid buttons */
+  --color-cloud: #F0F0F0;   /* light gray — section bands, cards, hairline borders, hover fills */
+  --color-stone: #59504F;   /* warm gray — body text on white */
+  --color-surface: #FFFFFF; /* white — page/section background */
+  --color-ink: #23261F;     /* header/footer text */
+  --color-sea: #4A90A4;     /* brand blue — hero/CTA gradient base */
+  --color-sea-deep: #2F6577;
+
+  --font-display: "Montserrat", sans-serif;
+  --font-sans: "Montserrat", sans-serif;
+  --font-heading: "Montserrat", sans-serif;
+}
+
+html.js .gs-hidden {
+  opacity: 0;
+}

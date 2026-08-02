@@ -6,12 +6,12 @@ description: Use when adding or changing any animation, GSAP/ScrollTrigger code,
 # Nessebar Animation & Design Language
 
 ## Overview
-Luxury-minimal, calm, photography-led — inspired by domitur.pt (established 2026-07-22, homepage is the reference implementation). Clean white/grey sections, near-black navy type, uppercase tracked micro-labels, rounded cards, gentle motion. Never flashy, no dark full sections (client prefers lighter colors).
+Luxury-minimal, calm, photography-led — the Marina design system (established 2026-07-22, homepage is the reference implementation). Clean white/grey sections, near-black navy type, uppercase tracked micro-labels, rounded cards, gentle motion. Never flashy, no dark full sections (client prefers lighter colors).
 
 **Reference pages:** `app/pages/index.vue` + `app/components/landing/*` — when styling any other page or component, match these.
 
 ## Palette (tokens in `@theme`, `app/assets/css/main.css`)
-These 7 are the only color tokens (audited 2026-07-23, every one in active use). The pre-Domitur legacy palette (`paper`, `sage`, `teal`, `leaf`, …) and the `mist` duplicate were deleted; never reintroduce them — `mist` roles now use `cloud`.
+These 7 are the only color tokens (audited 2026-07-23, every one in active use). The pre-Marina legacy palette (`paper`, `sage`, `teal`, `leaf`, …) and the `mist` duplicate were deleted; never reintroduce them — `mist` roles now use `cloud`.
 - `--color-night #0D0F19` — near-black navy: headings, solid buttons, dark text on light
 - `--color-cloud #F0F0F0` — the single light grey: section bands, cards on white, hairline borders (`border-cloud`), hover fills
 - `--color-stone #59504F` — warm grey: body text on white
@@ -30,14 +30,14 @@ Contrast rules (WCAG AA): `night`/`stone` on white ✓, white on `night` ✓; ne
 ## Component recipes (copy from these, don't invent)
 - **Section rhythm**: full-width bands, alternate `bg-white` / `bg-cloud`, `px-6 py-10 sm:px-10 md:py-16 lg:py-20`, inner `mx-auto max-w-6xl`. A "card section" = `bg-white` section with one big `rounded-2xl bg-cloud p-8 sm:p-12` container (see WeatherWidget home mode).
 - **Cards**: two forms. (1) Filled `rounded-2xl bg-cloud p-8 sm:p-10` on white sections (homepage apartments) — may lift on hover (`hover:-translate-y-1 hover:shadow-md`) *only if the card is a link*. (2) Bordered `rounded-2xl border border-cloud bg-white` (okolí guide cards) — static, no hover movement/shadow (non-clickable content must not look clickable). Heading `text-night`, body `text-stone`, meta uppercase `text-sea-deep font-medium`.
-- **Buttons**: `UiBaseButton` Domitur variants — `night`, `night-outline` (on light), `light`, `light-outline` (on photo/dark), `ocean` (brand-teal `sea-deep` solid, e.g. navbar Přihlásit, primary form submits), `ghost` (tertiary — back/cancel actions) — all `rounded-full` pills; Domitur variants use uppercase tracked labels. Order convention: outline (secondary) first, solid (primary) second. These six are the only variants.
+- **Buttons**: `UiBaseButton` Marina variants — `night`, `night-outline` (on light), `light`, `light-outline` (on photo/dark), `ocean` (brand-teal `sea-deep` solid, e.g. navbar Přihlásit, primary form submits), `ghost` (tertiary — back/cancel actions) — all `rounded-full` pills; Marina variants use uppercase tracked labels. Order convention: outline (secondary) first, solid (primary) second. These six are the only variants.
 - **Tab / segmented pills** (admin Správa, reservation toggles): active = solid `bg-night text-white` (or `bg-white` on a grey track); inactive = `border border-cloud bg-white text-stone`. Use a **border**, never `shadow-sm`, for the resting state — a rounded pill's shadow reads unevenly (sides only).
 - **Forms**: inputs/textareas/selects `rounded-xl border border-cloud bg-cloud/60 text-night`, focus `focus:border-sea-deep focus:bg-white focus:ring-2 focus:ring-sea-deep`; native file button `file:bg-cloud`; checkboxes `accent-sea-deep`; error text `text-red-700`.
 - **Hero / photo CTA**: section `relative isolate overflow-hidden` (the `isolate` is required — the `-z-10` image layer paints behind page backgrounds without it); image or `bg-gradient-to-br from-sea to-[#FAF6EF]` base + overlay `bg-gradient-to-t from-night/85 via-night/35 to-night/10`; white text, content `justify-end` bottom-left. CTA above footer = same look via pure CSS gradient (no photo, no baked-in text).
 - **Header/footer**: white, `border-cloud` hairline, minimal. Navbar: logo left; right group = language, Kalendář, Rezervovat, user, Odhlásit pill, hamburger (secondary links live in a right-aligned `rounded-2xl` panel, max ~half width, roomy `gap-5`). Footer mirrors navbar (brand left, tagline right).
 - **Gallery tiles**: `rounded-2xl` overflow-hidden, `aspect-square object-cover`, image `hover:scale-[1.03]`.
 
-## GSAP setup (Peak Finance pattern)
+## GSAP setup
 - `app/plugins/gsap.client.ts` registers ScrollTrigger, provides `$gsap`/`$ScrollTrigger`, and debounces `ScrollTrigger.refresh()` on resize (prevents jank).
 - Animate via the `useScrollAnimations` composable: scope tweens with `gsap.context` (auto-cleanup on unmount). With `prefers-reduced-motion`, **skip entirely** — set final state instantly, no tweens.
 - ScrollTrigger defaults: `start: 'top 85%'`, play once (`toggleActions: 'play none none none'`); never scrub, never pin.
@@ -60,4 +60,3 @@ Durations 0.5–0.9s, ease `power2.out`/`power3.out`. No neon, no cursor-followe
 - Forgetting reduced-motion guard → accessibility fail (spec requires it).
 - Animating layout properties (height/top) on scroll → jank; use transform/opacity.
 - Not testing resize: rotate the phone viewport in DevTools; ScrollTrigger positions must refresh without stutter.
-- Placeholder SVGs in `public/uploads/` have captions baked in — strip the `<text>` node if one shows where it shouldn't.
