@@ -62,7 +62,7 @@ export const mailRecipients = sqliteTable('mail_recipients', {
   sortOrder: integer('sort_order').notNull().default(0),
 })
 
-// Editable page texts (hero headings/ledes) — key-value with CS/EN, overrides code defaults.
+// Editable page texts (hero headings/intros) — key-value with CS/EN, overrides code defaults.
 export const siteTexts = sqliteTable('site_texts', {
   key: text('key').primaryKey(),
   valueCs: text('value_cs').notNull().default(''),

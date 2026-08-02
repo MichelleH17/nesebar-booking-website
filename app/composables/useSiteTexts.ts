@@ -4,7 +4,7 @@ interface SiteText {
 }
 
 /**
- * Editable page texts (hero headings/ledes) served from /api/site-texts.
+ * Editable page texts (hero headings/intros) served from /api/site-texts.
  * `st(key)` returns the value for the active locale, falling back to CS.
  * Fetched once and shared across components via the 'site-texts' key.
  */

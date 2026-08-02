@@ -26,7 +26,7 @@
     "eyebrow": "Nesebar · Bulharsko",
     "line1": "Náš kousek",
     "line2": "Bulharska",
-    "lede": "Dva byty v Nesebaru, kousek od moře, kde se scházíme jako rodina. Vyberte si termín a přijeďte."
+    "intro": "Dva byty v Nesebaru, kousek od moře, kde se scházíme jako rodina. Vyberte si termín a přijeďte."
   },
   "apartments": {
     "heading": "Naše dva byty",
@@ -38,13 +38,13 @@
   },
   "cta": {
     "heading": "Těšíme se na vás v Nesebaru",
-    "ledeLoggedIn": "Podívejte se, co dělat v okolí, nebo rovnou naplánujte svůj pobyt.",
-    "ledeGuest": "Podívejte se, co dělat v okolí, nebo se rovnou přihlaste a naplánujte svůj pobyt."
+    "introLoggedIn": "Podívejte se, co dělat v okolí, nebo rovnou naplánujte svůj pobyt.",
+    "introGuest": "Podívejte se, co dělat v okolí, nebo se rovnou přihlaste a naplánujte svůj pobyt."
   },
   "city": {
     "line1": "Nesebar a jeho",
     "line2": "okolí",
-    "lede": "Naše staré město leží na malém poloostrově a je zapsané v seznamu UNESCO — kamenné uličky, dřevěné domy a kostely staré stovky let. Kolem dokola písečné pláže, výlety podél pobřeží a všechno, co potřebujete vědět pro klidný pobyt."
+    "intro": "Naše staré město leží na malém poloostrově a je zapsané v seznamu UNESCO — kamenné uličky, dřevěné domy a kostely staré stovky let. Kolem dokola písečné pláže, výlety podél pobřeží a všechno, co potřebujete vědět pro klidný pobyt."
   },
   "weather": {
     "heading": "Počasí",
@@ -54,11 +54,11 @@
   },
   "beaches": {
     "heading": "Pláže",
-    "lede": "Moře máme prakticky za rohem. Vyberte si podle nálady."
+    "intro": "Moře máme prakticky za rohem. Vyberte si podle nálady."
   },
   "trips": {
     "heading": "Výlety",
-    "lede": "Když se chcete podívat dál, kolem je spousta míst na jednodenní výlet."
+    "intro": "Když se chcete podívat dál, kolem je spousta míst na jednodenní výlet."
   },
   "info": {
     "heading": "Praktické info"
@@ -148,7 +148,7 @@
   },
   "login": {
     "title": "Vítejte zpátky",
-    "lede": "Přihlaste se a naplánujte si pobyt.",
+    "intro": "Přihlaste se a naplánujte si pobyt.",
     "email": "E-mail",
     "password": "Heslo",
     "showPassword": "Zobrazit heslo",

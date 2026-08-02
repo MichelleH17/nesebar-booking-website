@@ -26,7 +26,7 @@
     "eyebrow": "Nesebar · Bulgaria",
     "line1": "Our little",
     "line2": "piece of Bulgaria",
-    "lede": "Two apartments in Nesebar, a short walk from the sea, where we gather as a family. Pick a date and come over."
+    "intro": "Two apartments in Nesebar, a short walk from the sea, where we gather as a family. Pick a date and come over."
   },
   "apartments": {
     "heading": "Our two apartments",
@@ -38,13 +38,13 @@
   },
   "cta": {
     "heading": "We look forward to seeing you in Nesebar",
-    "ledeLoggedIn": "See what there is to do nearby, or go ahead and plan your stay.",
-    "ledeGuest": "See what there is to do nearby, or log in and plan your stay."
+    "introLoggedIn": "See what there is to do nearby, or go ahead and plan your stay.",
+    "introGuest": "See what there is to do nearby, or log in and plan your stay."
   },
   "city": {
     "line1": "Nesebar and its",
     "line2": "surroundings",
-    "lede": "Our old town sits on a small peninsula and is a UNESCO World Heritage Site — cobbled lanes, wooden houses and churches hundreds of years old. All around are sandy beaches, trips along the coast, and everything you need to know for a relaxed stay."
+    "intro": "Our old town sits on a small peninsula and is a UNESCO World Heritage Site — cobbled lanes, wooden houses and churches hundreds of years old. All around are sandy beaches, trips along the coast, and everything you need to know for a relaxed stay."
   },
   "weather": {
     "heading": "Weather",
@@ -54,11 +54,11 @@
   },
   "beaches": {
     "heading": "Beaches",
-    "lede": "The sea is practically around the corner. Pick one to suit your mood."
+    "intro": "The sea is practically around the corner. Pick one to suit your mood."
   },
   "trips": {
     "heading": "Trips",
-    "lede": "When you want to venture further, there are plenty of spots nearby for a day trip."
+    "intro": "When you want to venture further, there are plenty of spots nearby for a day trip."
   },
   "info": {
     "heading": "Practical info"
@@ -148,7 +148,7 @@
   },
   "login": {
     "title": "Welcome back",
-    "lede": "Log in and plan your stay.",
+    "intro": "Log in and plan your stay.",
     "email": "Email",
     "password": "Password",
     "showPassword": "Show password",

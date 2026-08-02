@@ -23,7 +23,7 @@ useScrollAnimations(root, ({ revealUp }) => {
         {{ st('home.ctaHeading') }}
       </h2>
       <p class="max-w-xl font-sans text-white/85">
-        {{ st(loggedIn ? 'home.ctaLedeLoggedIn' : 'home.ctaLedeGuest') }}
+        {{ st(loggedIn ? 'home.ctaIntroLoggedIn' : 'home.ctaIntroGuest') }}
       </p>
       <div class="flex flex-wrap justify-center gap-3 pt-2">
         <UiBaseButton variant="light-outline" @click="navigateTo('/okoli')">
