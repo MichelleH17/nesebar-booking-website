@@ -1,31 +1,7 @@
 <script setup lang="ts">
-interface Apartment {
-  id: string
-  name: string
-  nameEn: string
-  description: string
-  descriptionEn: string
-  capacity: number
-  nightlyRate: number
-  perPersonPricing: boolean
-  hidden: boolean
-}
-
-interface Photo {
-  id: number
-  apartmentId: string | null
-  url: string
-  alt: string
-  altEn: string
-  sortOrder: number
-  onHomepage: boolean
-}
-
-interface Weather {
-  current: { temp: number } | null
-  daily: Array<{ date: string; min: number; max: number }>
-  sea: number | null
-}
+import type { Apartment } from '~~/shared/types/apartment'
+import type { Photo } from '~~/shared/types/photo'
+import type { Weather } from '~~/shared/types/weather'
 
 const { data: apartments } = await useFetch<Apartment[]>('/api/apartments', {
   default: () => [],
