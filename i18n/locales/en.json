@@ -14,7 +14,7 @@
     "closeMenu": "Close menu"
   },
   "footer": {
-    "tagline": "Our little piece of Bulgaria • Nesebar • {year}"
+    "tagline": "Our little piece of Bulgaria • Nessebar • {year}"
   },
   "common": {
     "book": "Book a stay",
@@ -23,10 +23,10 @@
     "back": "Back"
   },
   "hero": {
-    "eyebrow": "Nesebar · Bulgaria",
+    "eyebrow": "Nessebar · Bulgaria",
     "line1": "Our little",
     "line2": "piece of Bulgaria",
-    "intro": "Two apartments in Nesebar, a short walk from the sea, where we gather as a family. Pick a date and come over."
+    "intro": "Two apartments in Nessebar, a short walk from the sea, where we gather as a family. Pick a date and come over."
   },
   "apartments": {
     "heading": "Our two apartments",
@@ -34,21 +34,21 @@
     "viewAvailability": "View availability in the calendar →"
   },
   "gallery": {
-    "heading": "Nesebar in pictures"
+    "heading": "Nessebar in pictures"
   },
   "cta": {
-    "heading": "We look forward to seeing you in Nesebar",
+    "heading": "We look forward to seeing you in Nessebar",
     "introLoggedIn": "See what there is to do nearby, or go ahead and plan your stay.",
     "introGuest": "See what there is to do nearby, or log in and plan your stay."
   },
   "city": {
-    "line1": "Nesebar and its",
+    "line1": "Nessebar and its",
     "line2": "surroundings",
     "intro": "Our old town sits on a small peninsula and is a UNESCO World Heritage Site — cobbled lanes, wooden houses and churches hundreds of years old. All around are sandy beaches, trips along the coast, and everything you need to know for a relaxed stay."
   },
   "weather": {
     "heading": "Weather",
-    "now": "Right now in Nesebar",
+    "now": "Right now in Nessebar",
     "seaTemp": "Sea temperature",
     "error": "Couldn't load the weather 🌥️"
   },
@@ -142,7 +142,7 @@
     "train": "by train"
   },
   "occupancy": {
-    "heading": "Who's in Nesebar",
+    "heading": "Who's in Nessebar",
     "empty": "Nobody's here right now 🌊",
     "guestOf": "guest of {name}"
   },

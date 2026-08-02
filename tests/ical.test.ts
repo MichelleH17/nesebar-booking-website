@@ -17,7 +17,7 @@ describe('reservationToIcs', () => {
     expect(ics).toContain('BEGIN:VCALENDAR')
     expect(ics).toContain('DTSTART;VALUE=DATE:20260810')
     expect(ics).toContain('DTEND;VALUE=DATE:20260815')
-    expect(ics).toContain('SUMMARY:Nessebar 15B – Jana')
+    expect(ics).toContain('SUMMARY:Nesebar 15B – Jana')
     expect(ics).toContain('END:VCALENDAR')
     expect(ics).toMatch(/\r\n/g)
   })
@@ -34,7 +34,7 @@ describe('reservationToIcs', () => {
 
     const ics = reservationToIcs(reservation)
 
-    expect(ics).toContain('SUMMARY:Nessebar 15B – Jana\\, Petr\\; spol\\\\')
+    expect(ics).toContain('SUMMARY:Nesebar 15B – Jana\\, Petr\\; spol\\\\')
     expect(ics).toContain('DESCRIPTION:první řádek\\ndruhý')
   })
 
