@@ -39,7 +39,7 @@ const { data: weather } = await useFetch<Weather>('/api/weather', {
 
 const cityImage = computed(() => {
   const general = photos.value?.find(p => !p.apartmentId)
-  return general?.url ?? photos.value?.[0]?.url ?? '/uploads/placeholder-2.svg'
+  return general?.url ?? photos.value?.[0]?.url ?? '/uploads/placeholder-city.svg'
 })
 
 const bySortOrder = (a: GuideItem, b: GuideItem) => a.sortOrder - b.sortOrder

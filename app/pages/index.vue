@@ -39,7 +39,7 @@ const { data: weather } = await useFetch<Weather>('/api/weather', {
 
 const heroImage = computed(() => {
   const general = photos.value?.find(p => !p.apartmentId)
-  return general?.url ?? photos.value?.[0]?.url ?? '/uploads/placeholder-1.svg'
+  return general?.url ?? photos.value?.[0]?.url ?? '/uploads/placeholder-hero.svg'
 })
 
 // Admin-picked gallery photos; none picked = section hidden (GallerySection renders only when non-empty).

@@ -4,7 +4,7 @@ withDefaults(
     imageUrl?: string
   }>(),
   {
-    imageUrl: '/uploads/placeholder-1.svg',
+    imageUrl: '/uploads/placeholder-hero.svg',
   },
 )
 

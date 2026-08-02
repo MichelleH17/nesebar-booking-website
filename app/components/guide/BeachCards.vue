@@ -41,7 +41,7 @@ useScrollAnimations(root, ({ revealUp }) => {
       >
         <div class="aspect-[4/3] overflow-hidden bg-cloud">
           <img
-            :src="beach.imageUrl ?? '/uploads/placeholder-3.svg'"
+            :src="beach.imageUrl ?? '/uploads/placeholder-beach.svg'"
             :alt="loc(beach, 'title')"
             class="h-full w-full object-cover"
           >
