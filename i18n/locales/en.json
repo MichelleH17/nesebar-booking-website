@@ -1,0 +1,163 @@
+{
+  "nav": {
+    "aria": "Main",
+    "language": "Language",
+    "okoli": "Area",
+    "kalendar": "Calendar",
+    "prehled": "Overview",
+    "admin": "Admin",
+    "designSystem": "Design system",
+    "rezervovat": "Book",
+    "odhlasit": "Log out",
+    "prihlasit": "Log in",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "footer": {
+    "tagline": "Our little piece of Bulgaria • Nesebar • {year}"
+  },
+  "common": {
+    "book": "Book a stay",
+    "login": "Log in",
+    "discoverArea": "Discover the area",
+    "back": "Back"
+  },
+  "hero": {
+    "eyebrow": "Nesebar · Bulgaria",
+    "line1": "Our little",
+    "line2": "piece of Bulgaria",
+    "lede": "Two apartments in Nesebar, a short walk from the sea, where we gather as a family. Pick a date and come over."
+  },
+  "apartments": {
+    "heading": "Our two apartments",
+    "upTo": "Up to {count} people",
+    "viewAvailability": "View availability in the calendar →"
+  },
+  "gallery": {
+    "heading": "Nesebar in pictures"
+  },
+  "cta": {
+    "heading": "We look forward to seeing you in Nesebar",
+    "ledeLoggedIn": "See what there is to do nearby, or go ahead and plan your stay.",
+    "ledeGuest": "See what there is to do nearby, or log in and plan your stay."
+  },
+  "city": {
+    "line1": "Nesebar and its",
+    "line2": "surroundings",
+    "lede": "Our old town sits on a small peninsula and is a UNESCO World Heritage Site — cobbled lanes, wooden houses and churches hundreds of years old. All around are sandy beaches, trips along the coast, and everything you need to know for a relaxed stay."
+  },
+  "weather": {
+    "heading": "Weather",
+    "now": "Right now in Nesebar",
+    "seaTemp": "Sea temperature",
+    "error": "Couldn't load the weather 🌥️"
+  },
+  "beaches": {
+    "heading": "Beaches",
+    "lede": "The sea is practically around the corner. Pick one to suit your mood."
+  },
+  "trips": {
+    "heading": "Trips",
+    "lede": "When you want to venture further, there are plenty of spots nearby for a day trip."
+  },
+  "info": {
+    "heading": "Practical info"
+  },
+  "reservation": {
+    "newTitle": "New reservation",
+    "editTitle": "Edit reservation",
+    "apartment": "Apartment",
+    "guestName": "Guest name",
+    "people": "Number of people",
+    "decrease": "Decrease",
+    "increase": "Increase",
+    "capacity": "Apartment capacity: {count} people",
+    "arrival": "Arrival",
+    "departure": "Departure",
+    "nights": "{count} nights",
+    "travelQuestion": "How will you get here?",
+    "notes": "Note",
+    "notesPlaceholder": "late arrival, dog, flight number…",
+    "notifyWhom": "Who should we email?",
+    "submitNew": "Book",
+    "submitEdit": "Save changes",
+    "changeoverArrives": "{name} arrives the same day — please agree on times in the note.",
+    "changeoverDeparts": "{name} leaves the same day — please agree on times in the note.",
+    "anotherGuest": "another guest",
+    "errNameRequired": "Please enter the guest's name.",
+    "errDateOrder": "The departure date must be after the arrival date.",
+    "errSaveFailed": "The reservation couldn't be saved, please try again.",
+    "forGuest": "Stay for a guest (friend) – shown grey in the calendar",
+    "calYourStay": "Your stay",
+    "calOccupied": "Occupied",
+    "calHint": "Click your arrival and departure in the calendar"
+  },
+  "travel": {
+    "car": "By car",
+    "plane": "By plane",
+    "bus": "By bus",
+    "train": "By train"
+  },
+  "price": {
+    "paidStay": "Paid stay?",
+    "lineItem": "{nights} nights × {rate} CZK",
+    "lineItemPerPerson": "{nights} nights × {rate} CZK × {people} ppl",
+    "total": "{total} CZK",
+    "free": "Free 💛"
+  },
+  "calendar": {
+    "title": "Calendar",
+    "toastNew": "Reservation saved 💛",
+    "toastEdit": "Changes saved 💛",
+    "prevMonth": "Previous month",
+    "nextMonth": "Next month",
+    "occupied": "Occupied",
+    "freeBook": "Free — book",
+    "barLabel": "Reservation {name} {range}",
+    "changeoverArrives": "{name} arrives the same day — agree on times in the note.",
+    "changeoverDeparts": "{name} leaves the same day — agree on times in the note.",
+    "anotherGuest": "another guest",
+    "guestOf": "Guest - {name} is responsible"
+  },
+  "detail": {
+    "close": "Close",
+    "range": "Dates",
+    "nightsCount": "Number of nights",
+    "peopleCount": "People",
+    "travel": "Travel",
+    "price": "Price",
+    "notes": "Note",
+    "priceFree": "free (family)",
+    "priceValue": "{amount} CZK",
+    "addToCalendar": "Add to calendar",
+    "edit": "Edit",
+    "cancel": "Cancel",
+    "confirmCancel": "Are you sure you want to cancel this reservation?",
+    "responsible": "Responsible"
+  },
+  "travelPast": {
+    "car": "by car",
+    "plane": "by plane",
+    "bus": "by bus",
+    "train": "by train"
+  },
+  "occupancy": {
+    "heading": "Who's in Nesebar",
+    "empty": "Nobody's here right now 🌊",
+    "guestOf": "guest of {name}"
+  },
+  "login": {
+    "title": "Welcome back",
+    "lede": "Log in and plan your stay.",
+    "email": "Email",
+    "password": "Password",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "submitting": "Logging in…",
+    "error": "Wrong email or password."
+  },
+  "demo": {
+    "banner": "Demo mode — view only, changes aren't saved.",
+    "tryButton": "Try the demo"
+  }
+}

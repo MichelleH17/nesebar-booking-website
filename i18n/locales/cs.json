@@ -1,0 +1,163 @@
+{
+  "nav": {
+    "aria": "Hlavní",
+    "language": "Jazyk",
+    "okoli": "Okolí",
+    "kalendar": "Kalendář",
+    "prehled": "Přehled",
+    "admin": "Admin",
+    "designSystem": "Design systém",
+    "rezervovat": "Rezervovat",
+    "odhlasit": "Odhlásit",
+    "prihlasit": "Přihlásit",
+    "openMenu": "Otevřít menu",
+    "closeMenu": "Zavřít menu"
+  },
+  "footer": {
+    "tagline": "Náš kousek Bulharska • Nesebar • {year}"
+  },
+  "common": {
+    "book": "Rezervovat pobyt",
+    "login": "Přihlásit se",
+    "discoverArea": "Objevte okolí",
+    "back": "Zpět"
+  },
+  "hero": {
+    "eyebrow": "Nesebar · Bulharsko",
+    "line1": "Náš kousek",
+    "line2": "Bulharska",
+    "lede": "Dva byty v Nesebaru, kousek od moře, kde se scházíme jako rodina. Vyberte si termín a přijeďte."
+  },
+  "apartments": {
+    "heading": "Naše dva byty",
+    "upTo": "Až {count} osob",
+    "viewAvailability": "Zobrazit dostupnost v kalendáři →"
+  },
+  "gallery": {
+    "heading": "Nesebar v obrazech"
+  },
+  "cta": {
+    "heading": "Těšíme se na vás v Nesebaru",
+    "ledeLoggedIn": "Podívejte se, co dělat v okolí, nebo rovnou naplánujte svůj pobyt.",
+    "ledeGuest": "Podívejte se, co dělat v okolí, nebo se rovnou přihlaste a naplánujte svůj pobyt."
+  },
+  "city": {
+    "line1": "Nesebar a jeho",
+    "line2": "okolí",
+    "lede": "Naše staré město leží na malém poloostrově a je zapsané v seznamu UNESCO — kamenné uličky, dřevěné domy a kostely staré stovky let. Kolem dokola písečné pláže, výlety podél pobřeží a všechno, co potřebujete vědět pro klidný pobyt."
+  },
+  "weather": {
+    "heading": "Počasí",
+    "now": "Právě teď v Nesebaru",
+    "seaTemp": "Teplota moře",
+    "error": "Počasí se nepodařilo načíst 🌥️"
+  },
+  "beaches": {
+    "heading": "Pláže",
+    "lede": "Moře máme prakticky za rohem. Vyberte si podle nálady."
+  },
+  "trips": {
+    "heading": "Výlety",
+    "lede": "Když se chcete podívat dál, kolem je spousta míst na jednodenní výlet."
+  },
+  "info": {
+    "heading": "Praktické info"
+  },
+  "reservation": {
+    "newTitle": "Nová rezervace",
+    "editTitle": "Upravit rezervaci",
+    "apartment": "Byt",
+    "guestName": "Jméno hosta",
+    "people": "Počet osob",
+    "decrease": "Ubrat",
+    "increase": "Přidat",
+    "capacity": "Kapacita bytu: {count} osob",
+    "arrival": "Příjezd",
+    "departure": "Odjezd",
+    "nights": "{count} nocí",
+    "travelQuestion": "Jak přijedete?",
+    "notes": "Poznámka",
+    "notesPlaceholder": "pozdní příjezd, pes, číslo letu…",
+    "notifyWhom": "Komu poslat e-mail?",
+    "submitNew": "Rezervovat",
+    "submitEdit": "Uložit změny",
+    "changeoverArrives": "Ve stejný den přijíždí {name} — domluvte si prosím časy v poznámce.",
+    "changeoverDeparts": "Ve stejný den odjíždí {name} — domluvte si prosím časy v poznámce.",
+    "anotherGuest": "další host",
+    "errNameRequired": "Vyplňte jméno hosta.",
+    "errDateOrder": "Datum odjezdu musí být po datu příjezdu.",
+    "errSaveFailed": "Rezervaci se nepodařilo uložit, zkuste to prosím znovu.",
+    "forGuest": "Pobyt pro hosta (přítele) – v kalendáři šedě",
+    "calYourStay": "Váš pobyt",
+    "calOccupied": "Obsazeno",
+    "calHint": "Klikněte na příjezd a odjezd v kalendáři"
+  },
+  "travel": {
+    "car": "Autem",
+    "plane": "Letadlem",
+    "bus": "Autobusem",
+    "train": "Vlakem"
+  },
+  "price": {
+    "paidStay": "Placený pobyt?",
+    "lineItem": "{nights} nocí × {rate} Kč",
+    "lineItemPerPerson": "{nights} nocí × {rate} Kč × {people} os.",
+    "total": "{total} Kč",
+    "free": "Zdarma 💛"
+  },
+  "calendar": {
+    "title": "Kalendář",
+    "toastNew": "Rezervace uložena 💛",
+    "toastEdit": "Změny uloženy 💛",
+    "prevMonth": "Předchozí měsíc",
+    "nextMonth": "Následující měsíc",
+    "occupied": "Obsazeno",
+    "freeBook": "Volno — rezervovat",
+    "barLabel": "Rezervace {name} {range}",
+    "changeoverArrives": "Ve stejný den přijíždí {name} — domluvte si časy v poznámce.",
+    "changeoverDeparts": "Ve stejný den odjíždí {name} — domluvte si časy v poznámce.",
+    "anotherGuest": "další host",
+    "guestOf": "Host - zodpovídá {name}"
+  },
+  "detail": {
+    "close": "Zavřít",
+    "range": "Termín",
+    "nightsCount": "Počet nocí",
+    "peopleCount": "Lidé",
+    "travel": "Doprava",
+    "price": "Cena",
+    "notes": "Poznámka",
+    "priceFree": "zdarma (rodina)",
+    "priceValue": "{amount} Kč",
+    "addToCalendar": "Přidat do kalendáře",
+    "edit": "Upravit",
+    "cancel": "Zrušit",
+    "confirmCancel": "Opravdu chcete tuto rezervaci zrušit?",
+    "responsible": "Zodpovídá"
+  },
+  "travelPast": {
+    "car": "autem",
+    "plane": "letadlem",
+    "bus": "autobusem",
+    "train": "vlakem"
+  },
+  "occupancy": {
+    "heading": "Kdo je v Nesebaru",
+    "empty": "Nikdo tu teď není 🌊",
+    "guestOf": "host - zodpovídá {name}"
+  },
+  "login": {
+    "title": "Vítejte zpátky",
+    "lede": "Přihlaste se a naplánujte si pobyt.",
+    "email": "E-mail",
+    "password": "Heslo",
+    "showPassword": "Zobrazit heslo",
+    "hidePassword": "Skrýt heslo",
+    "submitting": "Přihlašuji…",
+    "error": "Nesprávný e-mail nebo heslo."
+  },
+  "demo": {
+    "banner": "Ukázkový režim — jen pro prohlížení, změny se neukládají.",
+    "tryButton": "Vyzkoušet ukázku"
+  }
+}
