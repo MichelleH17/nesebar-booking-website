@@ -1,11 +1,5 @@
 <script setup lang="ts">
-interface MailRecipient {
-  id: number
-  name: string
-  email: string
-  active: boolean
-  sortOrder: number
-}
+import type { MailRecipient } from '~~/shared/types/mailRecipient'
 
 const { data: recipients, refresh } = useFetch<MailRecipient[]>('/api/mail-recipients', {
   query: { all: 1 },
