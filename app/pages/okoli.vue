@@ -1,31 +1,7 @@
 <script setup lang="ts">
-interface GuideItem {
-  id: number
-  type: 'beach' | 'trip' | 'info'
-  title: string
-  titleEn: string
-  description: string
-  descriptionEn: string
-  imageUrl: string | null
-  meta: string | null
-  metaEn: string | null
-  sortOrder: number
-}
-
-interface Photo {
-  id: number
-  apartmentId: string | null
-  url: string
-  alt: string
-  altEn: string
-  sortOrder: number
-}
-
-interface Weather {
-  current: { temp: number } | null
-  daily: Array<{ date: string; min: number; max: number }>
-  sea: number | null
-}
+import type { GuideItem } from '~~/shared/types/guideItem'
+import type { Photo } from '~~/shared/types/photo'
+import type { Weather } from '~~/shared/types/weather'
 
 const { data: guideItems } = await useFetch<GuideItem[]>('/api/guide-items', {
   default: () => [],
