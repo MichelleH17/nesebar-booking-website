@@ -10,6 +10,7 @@
   --color-sea: #4A90A4;     /* brand blue — hero/CTA gradient base */
   --color-sea-deep: #2F6577;
   --color-off-white: #FAF6EF; /* warm off-white — hero/CTA gradient end */
+  --color-silver: #9AA0A6;   /* neutral gray — anonymized/guest reservation bars, matches server GUEST_COLOR */
 
   --font-display: "Montserrat", sans-serif;
   --font-sans: "Montserrat", sans-serif;

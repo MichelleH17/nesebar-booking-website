@@ -11,12 +11,13 @@ Luxury-minimal, calm, photography-led — the Marina design system (established 
 **Reference pages:** `app/pages/index.vue` + `app/components/landing/*` — when styling any other page or component, match these.
 
 ## Palette (tokens in `@theme`, `app/assets/css/main.css`)
-These 8 are the only color tokens (audited 2026-08-02, every one in active use). The pre-Marina legacy palette (`paper`, `sage`, `teal`, `leaf`, …) and the `mist` duplicate were deleted; never reintroduce them — `mist` roles now use `cloud`.
+These 9 are the only color tokens (audited 2026-08-02, every one in active use). The pre-Marina legacy palette (`paper`, `sage`, `teal`, `leaf`, …) and the `mist` duplicate were deleted; never reintroduce them — `mist` roles now use `cloud`.
 - `--color-night #0D0F19` — near-black navy: headings, solid buttons, dark text on light
 - `--color-cloud #F0F0F0` — the single light grey: section bands, cards on white, hairline borders (`border-cloud`), hover fills
 - `--color-stone #59504F` — warm grey: body text on white
 - `--color-sea #4A90A4` / `--color-sea-deep #2F6577` — brand blue: hero/CTA gradients; `sea-deep` also for links, focus rings, `ocean` button, eyebrow/accent labels (`font-medium`), demo-mode banner, `night` button hover; `bg-sea/10 text-sea-deep` = info hint (the former `indigo` token was removed 2026-07-23 — `sea-deep` took all its roles)
 - `--color-off-white #FAF6EF` — warm off-white: hero/CTA gradient end (`from-sea to-off-white`) — never hardcode this hex, always use the token
+- `--color-silver #9AA0A6` — neutral gray: anonymized/guest reservation bars (`bg-silver`) — matches the server's `GUEST_COLOR` constant, never hardcode this hex
 - `--color-surface #FFFFFF` (white surfaces), `--color-ink #23261F` (header/footer text, ghost button text)
 
 Contrast rules (WCAG AA): `night`/`stone` on white ✓, white on `night` ✓; never bright `sea` as text on light backgrounds.
