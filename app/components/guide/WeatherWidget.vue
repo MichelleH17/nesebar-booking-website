@@ -1,9 +1,5 @@
 <script setup lang="ts">
-interface Weather {
-  current: { temp: number } | null
-  daily: Array<{ date: string; min: number; max: number }>
-  sea: number | null
-}
+import type { Weather } from '~~/shared/types/weather'
 
 const { t, locale } = useI18n()
 
