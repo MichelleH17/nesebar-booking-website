@@ -2,6 +2,8 @@
 import { nights } from '~~/shared/utils/booking'
 import { isFullReservation } from '~/composables/useReservations'
 import type { Reservation } from '~/composables/useReservations'
+import type { Apartment } from '~~/shared/types/apartment'
+import type { MailRecipientSummary } from '~~/shared/types/mailRecipient'
 
 interface FormInitial {
   apartmentId: string
@@ -14,23 +16,6 @@ interface FormInitial {
   priceApplied: number | null
   forGuest: boolean
   notifyEmails: string[]
-}
-
-interface Apartment {
-  id: string
-  label: string
-  name: string
-  capacity: number
-  nightlyRate: number
-  perPersonPricing: boolean
-  priceHidden: boolean
-  hidden: boolean
-}
-
-interface MailRecipient {
-  id: number
-  name: string
-  email: string
 }
 
 const props = defineProps<{
@@ -62,7 +47,7 @@ const form = reactive<FormInitial>({
 })
 
 const { data: apartments } = await useFetch<Apartment[]>('/api/apartments', { default: () => [] })
-const { data: recipients } = await useFetch<MailRecipient[]>('/api/mail-recipients', { default: () => [] })
+const { data: recipients } = await useFetch<MailRecipientSummary[]>('/api/mail-recipients', { default: () => [] })
 const { reservations, refresh: refreshReservations } = useReservations()
 
 // Default: Michaela (first active recipient) checked on a fresh reservation.
