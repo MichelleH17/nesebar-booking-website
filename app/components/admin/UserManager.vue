@@ -1,26 +1,19 @@
 <script setup lang="ts">
-interface User {
-  id: number
-  name: string
-  email: string
-  role: 'guest' | 'family' | 'admin'
-  color: string
-  createdAt: string
-}
+import type { AdminUser } from '~~/shared/types/adminUser'
 
-const ROLES: User['role'][] = ['guest', 'family', 'admin']
-const ROLE_LABELS: Record<User['role'], string> = {
+const ROLES: AdminUser['role'][] = ['guest', 'family', 'admin']
+const ROLE_LABELS: Record<AdminUser['role'], string> = {
   guest: 'Host',
   family: 'Rodina',
   admin: 'Správce',
 }
 
 const { user: sessionUser } = useUserSession()
-const { data: users, refresh } = useFetch<User[]>('/api/users', { default: () => [] })
+const { data: users, refresh } = useFetch<AdminUser[]>('/api/users', { default: () => [] })
 
-const drafts = ref<Record<number, User>>({})
+const drafts = ref<Record<number, AdminUser>>({})
 watchEffect(() => {
-  const map: Record<number, User> = {}
+  const map: Record<number, AdminUser> = {}
   for (const u of users.value) map[u.id] = { ...u }
   drafts.value = map
 })
@@ -59,7 +52,7 @@ async function setPassword(id: number) {
 }
 
 // --- Add ---
-const newUser = reactive({ name: '', email: '', password: '', color: '#4A90A4', role: 'family' as User['role'] })
+const newUser = reactive({ name: '', email: '', password: '', color: '#4A90A4', role: 'family' as AdminUser['role'] })
 const addError = ref<string | null>(null)
 
 async function add() {
