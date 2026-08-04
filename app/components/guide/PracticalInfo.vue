@@ -8,7 +8,7 @@ defineProps<{
   items: GuideItem[]
 }>()
 
-const root = ref<HTMLElement | null>(null)
+const root = useTemplateRef<HTMLElement>('root')
 const openId = ref<number | null>(null)
 
 function toggle(id: number) {

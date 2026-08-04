@@ -12,7 +12,7 @@ const { loggedIn } = useUserSession()
 const { t } = useI18n()
 const { st } = useSiteTexts()
 
-const root = ref<HTMLElement | null>(null)
+const root = useTemplateRef<HTMLElement>('root')
 const image = ref<HTMLElement | null>(null)
 
 onMounted(() => {

@@ -43,7 +43,7 @@ function onBarLeave() {
   hovered.value = null
 }
 
-const root = ref<HTMLElement | null>(null)
+const root = useTemplateRef<HTMLElement>('root')
 useScrollAnimations(root, ({ revealUp }) => {
   revealUp('.gs-hidden', root.value)
 })

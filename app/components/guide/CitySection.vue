@@ -10,7 +10,7 @@ withDefaults(
   },
 )
 
-const root = ref<HTMLElement | null>(null)
+const root = useTemplateRef<HTMLElement>('root')
 const image = ref<HTMLElement | null>(null)
 
 onMounted(() => {

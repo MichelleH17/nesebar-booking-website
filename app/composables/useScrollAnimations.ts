@@ -24,7 +24,16 @@ export function useScrollAnimations(scopeRef: Ref<Element | null | undefined>, c
 
   onMounted(() => {
     const scope = scopeRef.value
-    if (!scope) return
+    // Scope missing (e.g. renamed template ref) — reveal instead of leaving .gs-hidden at opacity 0 forever.
+    // There is no scope to query within, so reveal only orphans: elements no other component claimed with a
+    // tween. Deferred to nextTick because healthy components create their tweens during this same mount pass.
+    if (!scope) {
+      nextTick(() => {
+        const orphans = [...document.querySelectorAll('.gs-hidden')].filter(el => !gsap.getTweensOf(el).length)
+        if (orphans.length) gsap.set(orphans, { opacity: 1 })
+      })
+      return
+    }
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 

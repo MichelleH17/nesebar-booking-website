@@ -22,7 +22,7 @@ function bookGap(apartmentId: string, g: SeasonGap) {
   navigateTo(`/rezervace/nova?apartment=${apartmentId}&arrival=${arrival}&zpet=prehled`)
 }
 
-const root = ref<HTMLElement | null>(null)
+const root = useTemplateRef<HTMLElement>('root')
 useScrollAnimations(root, ({ revealUp }) => {
   revealUp('.gs-hidden', root.value)
 })

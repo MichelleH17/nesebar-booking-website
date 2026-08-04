@@ -8,7 +8,7 @@ defineProps<{
 const { st } = useSiteTexts()
 const loc = useLocalizedContent()
 
-const root = ref<HTMLElement | null>(null)
+const root = useTemplateRef<HTMLElement>('root')
 
 useScrollAnimations(root, ({ revealUp }) => {
   revealUp('.gs-hidden', root.value)

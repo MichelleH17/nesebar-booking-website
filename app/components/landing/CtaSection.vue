@@ -3,7 +3,7 @@ const { loggedIn } = useUserSession()
 const { t } = useI18n()
 const { st } = useSiteTexts()
 
-const root = ref<HTMLElement | null>(null)
+const root = useTemplateRef<HTMLElement>('root')
 
 useScrollAnimations(root, ({ revealUp }) => {
   revealUp('.gs-hidden', root.value)
