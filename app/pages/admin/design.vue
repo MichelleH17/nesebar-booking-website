@@ -2,7 +2,7 @@
 definePageMeta({ middleware: 'admin' })
 
 // Design system reference — the Marina system used on the
-// homepage, kalendáři and rezervačním formuláři.
+// homepage, calendar and reservation form.
 
 interface Swatch { name: string; token: string; hex: string; note?: string; dark?: boolean }
 

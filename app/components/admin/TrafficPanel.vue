@@ -26,7 +26,7 @@ const source = (ref_: string) => {
 
 const device = (ua: string) => (/Mobile|Android|iPhone/.test(ua) ? 'mobil' : 'počítač')
 
-// Jedna návštěva = jeden vizitor; seskupíme jeho zobrazení a seřadíme od nejnovější.
+// One visit = one visitor; group their page views and sort newest first.
 const visits = computed(() => {
   const map = new Map<string, View[]>()
   for (const v of views.value) {

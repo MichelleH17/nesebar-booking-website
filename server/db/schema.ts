@@ -89,8 +89,8 @@ export const guideItems = sqliteTable('guide_items', {
   hidden: integer('hidden', { mode: 'boolean' }).notNull().default(false),
 })
 
-// Návštěvnost: jeden řádek = jedno zobrazení stránky, zapsané klientským pluginem.
-// Bez IP adres — návštěvníka odlišuje jen náhodné id v cookie `vid`.
+// Traffic: one row = one page view, written by the client plugin.
+// No IP addresses — visitors are distinguished only by a random id in the `vid` cookie.
 export const pageViews = sqliteTable('page_views', {
   id: integer('id').primaryKey({ autoIncrement: true }),
   ts: text('ts').notNull(),

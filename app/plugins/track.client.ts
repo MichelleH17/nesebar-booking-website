@@ -1,4 +1,4 @@
-// Návštěvnost: pingne /api/track při prvním načtení i při každé SPA navigaci.
+// Traffic: pings /api/track on first load and on every SPA navigation.
 export default defineNuxtPlugin((nuxtApp) => {
   const router = useRouter()
   const send = (path: string, ref: string) => {

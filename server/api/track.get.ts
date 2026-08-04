@@ -1,7 +1,7 @@
 import { useDb } from '~~/server/db'
 import { pageViews } from '~~/server/db/schema'
 
-// Zápis návštěvy. Schválně GET — demo session smí jen GET (server/middleware/demo-readonly.ts).
+// Writes a page view. Deliberately GET — the demo session may only GET (server/middleware/demo-readonly.ts).
 export default defineEventHandler(async (event) => {
   const q = getQuery(event)
   const path = String(q.path || '').slice(0, 200)

@@ -20,7 +20,7 @@ const router = useRouter()
 const active = ref<TabKey>(isTabKey(route.query.tab) ? route.query.tab : 'domu')
 
 onMounted(() => {
-  // Bez ?tab v URL obnovíme naposledy otevřenou záložku
+  // Without ?tab in the URL, restore the last opened tab
   if (!route.query.tab) {
     const saved = sessionStorage.getItem('admin-tab')
     if (isTabKey(saved)) active.value = saved

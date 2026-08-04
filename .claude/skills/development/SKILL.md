@@ -12,7 +12,7 @@ Private family reservation site for apartments 15B/16B in Nessebar. Design spec 
 - **Security is server-side.** Roles: `guest` (logged-in friend), `family`, `admin`. Every API route uses `requireAuth` / `requireFamily` (403 for guests) / `requireAdmin` from `server/utils/session.ts`; non-admins may only modify reservations where `userId` matches their session. Guests get anonymized reservation reads (others' rows = apartment + dates only — no names, colors, notes, prices) and no stats/occupancy. Page middleware is UX, not security.
 - **Double-booking check** lives in the reservation create/update handler only (never client-only): same apartment, `status = 'active'`, `arrival < existing.departure AND departure > existing.arrival`, excluding the edited id. Conflict → 409 with Czech message. Same-day changeover allowed.
 - **Email never blocks.** `sendReservationMail()` is try/caught; failures are logged and reported in the response, the reservation still succeeds. Missing SMTP env → log rendered email to console.
-- **All user-facing copy is Czech.** Warm, familial tone (this is for family, not customers).
+- **All user-facing copy is Czech.** Warm, familial tone (this is for family, not customers). **Code comments are English** — even when they describe Czech UI (quoting a Czech label or route inside an English sentence is fine).
 - **Public pages leak nothing** — no reservation data reachable without a session.
 
 ## Structure
