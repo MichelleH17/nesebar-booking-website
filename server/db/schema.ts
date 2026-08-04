@@ -88,3 +88,16 @@ export const guideItems = sqliteTable('guide_items', {
   sortOrder: integer('sort_order').notNull().default(0),
   hidden: integer('hidden', { mode: 'boolean' }).notNull().default(false),
 })
+
+// Návštěvnost: jeden řádek = jedno zobrazení stránky, zapsané klientským pluginem.
+// Bez IP adres — návštěvníka odlišuje jen náhodné id v cookie `vid`.
+export const pageViews = sqliteTable('page_views', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  ts: text('ts').notNull(),
+  visitor: text('visitor').notNull(),
+  path: text('path').notNull(),
+  referrer: text('referrer').notNull().default(''),
+  userName: text('user_name').notNull().default(''),
+  role: text('role').notNull().default(''),
+  userAgent: text('user_agent').notNull().default(''),
+})

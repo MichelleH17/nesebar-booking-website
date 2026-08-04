@@ -9,6 +9,7 @@ const TABS = [
   { key: 'lide', label: 'Lidé' },
   { key: 'emaily', label: 'E-maily' },
   { key: 'rezervace', label: 'Rezervace' },
+  { key: 'navstevy', label: 'Návštěvy' },
 ] as const
 
 type TabKey = (typeof TABS)[number]['key']
@@ -33,17 +34,17 @@ watch(active, (tab) => {
 </script>
 
 <template>
-  <div class="min-h-[calc(100vh-8rem)] bg-cloud px-4 py-10 sm:px-6 sm:py-14">
+  <div class="flex-1 bg-cloud px-4 py-10 sm:px-6 sm:py-14">
     <div class="mx-auto max-w-4xl">
     <h1 class="mb-8 font-heading text-4xl font-medium tracking-tight text-night sm:text-5xl">Správa</h1>
 
-    <div class="mb-6 -mx-4 overflow-x-auto px-4">
+    <div class="mb-4 -mx-4 overflow-x-auto px-4">
       <div class="flex w-max gap-2">
         <button
           v-for="tab in TABS"
           :key="tab.key"
           type="button"
-          class="cursor-pointer whitespace-nowrap rounded-full border px-4 py-2 text-sm font-medium transition"
+          class="cursor-pointer whitespace-nowrap rounded-full border px-4 py-2 text-sm font-medium transition mb-4"
           :class="active === tab.key ? 'border-night bg-night text-white' : 'border-cloud bg-white text-stone hover:border-stone/40 hover:text-night hover:shadow-md'"
           @click="active = tab.key"
         >
@@ -60,6 +61,7 @@ watch(active, (tab) => {
       <AdminUserManager v-else-if="active === 'lide'" />
       <AdminMailRecipientManager v-else-if="active === 'emaily'" />
       <AdminReservationTable v-else-if="active === 'rezervace'" />
+      <AdminTrafficPanel v-else-if="active === 'navstevy'" />
     </ClientOnly>
     </div>
   </div>
