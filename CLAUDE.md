@@ -11,6 +11,8 @@ Project skills (invoke before working in their area):
 - `deploy-database` — production deploy (Netlify + Turso), DB migration/backups, prod env vars
 
 ## Commands
-- `npm run dev` — dev server at http://localhost:3000
+- `npm run dev` — dev server at http://localhost:3000. **Port 3000 belongs to the user — Claude must never start, kill, or browse it.** Claude uses 3001 only, started detached (background Bash shells die with the session):
+  `nohup env PORT=3001 npm run dev > /tmp/nessebar-dev-3001.log 2>&1 & disown`
+  Check `lsof -ti:3001` first and reuse it if already up.
 - `npm run build` / `npm run generate` / `npm run preview`
 - `npx drizzle-kit push` — apply schema to `.data/nessebar.db`
