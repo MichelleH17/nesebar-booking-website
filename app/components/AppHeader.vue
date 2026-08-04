@@ -35,8 +35,8 @@ const showLanguageSwitch = false
       {{ t('demo.banner') }}
     </div>
     <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-      <NuxtLink to="/" class="font-display text-lg font-semibold text-ink" @click="closeMenu">
-        Nesebar
+      <NuxtLink to="/" class="shrink-0" @click="closeMenu">
+        <img src="/logo.png" alt="Nesebar" class="h-8 w-auto md:h-10">
       </NuxtLink>
 
       <div class="flex items-center gap-3 sm:gap-5">
@@ -65,8 +65,8 @@ const showLanguageSwitch = false
 
         <!-- Primary links (desktop) -->
         <nav v-if="loggedIn" class="hidden items-center gap-5 sm:flex" :aria-label="t('nav.aria')">
-          <NuxtLink to="/kalendar" class="text-sm font-medium text-ink hover:text-sea-deep" active-class="underline decoration-sea-deep decoration-2 underline-offset-4" @click="closeMenu">{{ t('nav.kalendar') }}</NuxtLink>
-          <NuxtLink to="/rezervace/nova" class="text-sm font-medium text-ink hover:text-sea-deep" active-class="underline decoration-sea-deep decoration-2 underline-offset-4" @click="closeMenu">{{ t('nav.rezervovat') }}</NuxtLink>
+          <NuxtLink to="/kalendar" class="text-sm font-medium text-ink hover:text-sea-deep" active-class="underline decoration-sea-deep decoration-2 underline-offset-4" @click="closeMenu">{{ t('nav.calendar') }}</NuxtLink>
+          <NuxtLink to="/rezervace/nova" class="text-sm font-medium text-ink hover:text-sea-deep" active-class="underline decoration-sea-deep decoration-2 underline-offset-4" @click="closeMenu">{{ t('nav.book') }}</NuxtLink>
           <NuxtLink v-if="isAdmin" to="/admin" class="text-sm font-medium text-ink hover:text-sea-deep" active-class="underline decoration-sea-deep decoration-2 underline-offset-4" @click="closeMenu">{{ t('nav.admin') }}</NuxtLink>
         </nav>
 
@@ -80,9 +80,9 @@ const showLanguageSwitch = false
         </div>
 
         <!-- Primary action (desktop) -->
-        <UiBaseButton v-if="loggedIn" variant="night-outline" class="hidden sm:inline-flex" @click="logout">{{ t('nav.odhlasit') }}</UiBaseButton>
+        <UiBaseButton v-if="loggedIn" variant="night-outline" class="hidden sm:inline-flex" @click="logout">{{ t('nav.logout') }}</UiBaseButton>
         <NuxtLink v-else to="/prihlaseni" class="hidden sm:block" @click="closeMenu">
-          <UiBaseButton variant="ocean">{{ t('nav.prihlasit') }}</UiBaseButton>
+          <UiBaseButton variant="ocean">{{ t('nav.login') }}</UiBaseButton>
         </NuxtLink>
 
         <!-- Hamburger (all viewports) -->
@@ -118,12 +118,12 @@ const showLanguageSwitch = false
         <NuxtLink v-if="isAdmin" to="/admin" class="text-sm font-medium text-ink hover:text-sea-deep sm:hidden" active-class="underline decoration-sea-deep decoration-2 underline-offset-4" @click="closeMenu">{{ t('nav.admin') }}</NuxtLink>
         <NuxtLink v-if="isAdmin" to="/admin/design" class="text-sm font-medium text-ink hover:text-sea-deep" active-class="underline decoration-sea-deep decoration-2 underline-offset-4" @click="closeMenu">{{ t('nav.designSystem') }}</NuxtLink>
         <template v-if="loggedIn">
-          <NuxtLink to="/kalendar" class="text-sm font-medium text-ink sm:hidden" active-class="underline decoration-sea-deep decoration-2 underline-offset-4" @click="closeMenu">{{ t('nav.kalendar') }}</NuxtLink>
-          <NuxtLink to="/rezervace/nova" class="text-sm font-medium text-ink sm:hidden" active-class="underline decoration-sea-deep decoration-2 underline-offset-4" @click="closeMenu">{{ t('nav.rezervovat') }}</NuxtLink>
+          <NuxtLink to="/kalendar" class="text-sm font-medium text-ink sm:hidden" active-class="underline decoration-sea-deep decoration-2 underline-offset-4" @click="closeMenu">{{ t('nav.calendar') }}</NuxtLink>
+          <NuxtLink to="/rezervace/nova" class="text-sm font-medium text-ink sm:hidden" active-class="underline decoration-sea-deep decoration-2 underline-offset-4" @click="closeMenu">{{ t('nav.book') }}</NuxtLink>
         </template>
 
-        <NuxtLink to="/okoli" class="text-sm font-medium text-ink hover:text-sea-deep" active-class="underline decoration-sea-deep decoration-2 underline-offset-4" @click="closeMenu">{{ t('nav.okoli') }}</NuxtLink>
-        <NuxtLink v-if="canSeeOverview" to="/prehled" class="text-sm font-medium text-ink hover:text-sea-deep" active-class="underline decoration-sea-deep decoration-2 underline-offset-4" @click="closeMenu">{{ t('nav.prehled') }}</NuxtLink>
+        <NuxtLink to="/okoli" class="text-sm font-medium text-ink hover:text-sea-deep" active-class="underline decoration-sea-deep decoration-2 underline-offset-4" @click="closeMenu">{{ t('nav.area') }}</NuxtLink>
+        <NuxtLink v-if="canSeeOverview" to="/prehled" class="text-sm font-medium text-ink hover:text-sea-deep" active-class="underline decoration-sea-deep decoration-2 underline-offset-4" @click="closeMenu">{{ t('nav.overview') }}</NuxtLink>
 
         <div v-if="showLanguageSwitch" class="flex items-center gap-2 border-t border-cloud pt-3 text-xs font-semibold sm:hidden" role="group" :aria-label="t('nav.language')">
           <button
