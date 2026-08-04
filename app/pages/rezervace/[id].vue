@@ -5,6 +5,7 @@ import type { Reservation } from '~/composables/useReservations'
 definePageMeta({ middleware: 'auth' })
 
 const { t } = useI18n()
+useHead({ title: computed(() => t('detail.title')) })
 
 const route = useRoute()
 const { user } = useUserSession()

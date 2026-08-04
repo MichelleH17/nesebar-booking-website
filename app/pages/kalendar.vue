@@ -7,11 +7,12 @@ definePageMeta({ middleware: 'auth' })
 const { user } = useUserSession()
 const { reservations, refresh } = useReservations()
 const { t } = useI18n()
+useHead({ title: computed(() => t('nav.calendar')) })
 
 const route = useRoute()
 const savedToast = ref<string | null>(null)
-if (route.query.ulozeno === 'nova') savedToast.value = t('calendar.toastNew')
-else if (route.query.ulozeno === 'upravena') savedToast.value = t('calendar.toastEdit')
+if (route.query.saved === 'new') savedToast.value = t('calendar.toastNew')
+else if (route.query.saved === 'updated') savedToast.value = t('calendar.toastEdit')
 if (import.meta.client && savedToast.value) {
   setTimeout(() => { savedToast.value = null }, 3500)
 }
@@ -19,9 +20,9 @@ if (import.meta.client && savedToast.value) {
 const today = todayStr()
 const todayParts = parseYmd(today)
 
-// ?mesic=YYYY-MM (set after saving a reservation) opens the calendar on that month.
-const monthQuery = typeof route.query.mesic === 'string' && /^\d{4}-\d{2}$/.test(route.query.mesic)
-  ? route.query.mesic
+// ?month=YYYY-MM (set after saving a reservation) opens the calendar on that month.
+const monthQuery = typeof route.query.month === 'string' && /^\d{4}-\d{2}$/.test(route.query.month)
+  ? route.query.month
   : null
 const queryMonthNum = monthQuery ? Number(monthQuery.slice(5)) : 0
 const useQueryMonth = queryMonthNum >= 1 && queryMonthNum <= 12

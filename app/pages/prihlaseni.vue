@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { t } = useI18n()
+useHead({ title: computed(() => t('nav.login')) })
 const { st } = useSiteTexts()
 
 const email = ref('')

@@ -3,6 +3,9 @@ import type { Stats } from '~~/shared/utils/stats'
 
 definePageMeta({ middleware: 'auth' })
 
+const { t } = useI18n()
+useHead({ title: computed(() => t('nav.overview')) })
+
 const { user } = useUserSession()
 // Stats are family/admin only (server enforces it too via requireFamily).
 if (user.value?.role === 'guest') {

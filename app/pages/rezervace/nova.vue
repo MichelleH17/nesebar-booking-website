@@ -4,6 +4,7 @@ definePageMeta({ middleware: 'auth' })
 const route = useRoute()
 const { user } = useUserSession()
 const { t } = useI18n()
+useHead({ title: computed(() => t('nav.book')) })
 
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/
 const apartmentId = route.query.apartment === '16B' ? '16B' : '15B'

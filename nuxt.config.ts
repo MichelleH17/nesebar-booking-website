@@ -3,6 +3,17 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+  app: {
+    head: {
+      title: 'Nesebar',
+      meta: [
+        { name: 'description', content: 'Rezervace apartmánů v Nesebaru.' },
+        { name: 'robots', content: 'noindex, nofollow' }, // private family site
+        { name: 'theme-color', content: '#0D0F19' },
+      ],
+      link: [{ rel: 'icon', href: '/favicon.ico', sizes: 'any' }],
+    },
+  },
   modules: ['nuxt-auth-utils', '@nuxt/fonts', '@nuxtjs/i18n'],
   css: ['~/assets/css/main.css'],
   vite: {

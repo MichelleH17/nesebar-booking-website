@@ -1,6 +1,9 @@
 <script setup lang="ts">
 definePageMeta({ middleware: 'admin' })
 
+const { t } = useI18n()
+useHead({ title: () => t('nav.designSystem') })
+
 // Design system reference — the Marina system used on the
 // homepage, calendar and reservation form.
 

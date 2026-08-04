@@ -2,14 +2,14 @@
   "nav": {
     "aria": "Main",
     "language": "Language",
-    "okoli": "Area",
-    "kalendar": "Calendar",
-    "prehled": "Overview",
+    "area": "Area",
+    "calendar": "Calendar",
+    "overview": "Overview",
     "admin": "Admin",
     "designSystem": "Design system",
-    "rezervovat": "Book",
-    "odhlasit": "Log out",
-    "prihlasit": "Log in",
+    "book": "Book",
+    "logout": "Log out",
+    "login": "Log in",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
@@ -120,6 +120,7 @@
     "guestOf": "Guest - {name} is responsible"
   },
   "detail": {
+    "title": "Reservation",
     "close": "Close",
     "range": "Dates",
     "nightsCount": "Number of nights",

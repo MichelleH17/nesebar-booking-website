@@ -1,6 +1,9 @@
 <script setup lang="ts">
 definePageMeta({ middleware: 'admin' })
 
+const { t } = useI18n()
+useHead({ title: () => t('nav.admin') })
+
 const TABS = [
   { key: 'domu', label: 'Domů' },
   { key: 'byty', label: 'Byty' },

@@ -3,6 +3,9 @@ import type { GuideItem } from '~~/shared/types/guideItem'
 import type { Photo } from '~~/shared/types/photo'
 import type { Weather } from '~~/shared/types/weather'
 
+const { t } = useI18n()
+useHead({ title: computed(() => t('nav.area')) })
+
 const { data: guideItems } = await useFetch<GuideItem[]>('/api/guide-items', {
   default: () => [],
 })
@@ -28,7 +31,7 @@ const { isVisible } = useSectionVisibility()
 
 <template>
   <div>
-    <GuideCitySection v-if="isVisible('okoli.hero')" :image-url="cityImage" />
+    <GuideCitySection v-if="isVisible('area.hero')" :image-url="cityImage" />
     <GuideWeatherWidget :weather="weather" />
     <GuideBeachCards :beaches="beaches" />
     <GuideTripCards :trips="trips" />

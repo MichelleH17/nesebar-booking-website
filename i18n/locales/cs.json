@@ -2,14 +2,14 @@
   "nav": {
     "aria": "Hlavní",
     "language": "Jazyk",
-    "okoli": "Okolí",
-    "kalendar": "Kalendář",
-    "prehled": "Přehled",
+    "area": "Okolí",
+    "calendar": "Kalendář",
+    "overview": "Přehled",
     "admin": "Admin",
     "designSystem": "Design systém",
-    "rezervovat": "Rezervovat",
-    "odhlasit": "Odhlásit",
-    "prihlasit": "Přihlásit",
+    "book": "Rezervovat",
+    "logout": "Odhlásit",
+    "login": "Přihlásit",
     "openMenu": "Otevřít menu",
     "closeMenu": "Zavřít menu"
   },
@@ -120,6 +120,7 @@
     "guestOf": "Host - zodpovídá {name}"
   },
   "detail": {
+    "title": "Rezervace",
     "close": "Zavřít",
     "range": "Termín",
     "nightsCount": "Počet nocí",
