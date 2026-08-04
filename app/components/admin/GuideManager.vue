@@ -2,9 +2,9 @@
 import type { GuideItem } from '~~/shared/types/guideItem'
 
 const OKOLI_HERO_FIELDS = [
-  { key: 'okoli.line1', label: 'Nadpis – 1. řádek', multiline: false },
-  { key: 'okoli.line2', label: 'Nadpis – 2. řádek', multiline: false },
-  { key: 'okoli.intro', label: 'Úvodní text', multiline: true },
+  { key: 'area.line1', label: 'Nadpis – 1. řádek', multiline: false },
+  { key: 'area.line2', label: 'Nadpis – 2. řádek', multiline: false },
+  { key: 'area.intro', label: 'Úvodní text', multiline: true },
 ]
 
 const TYPE_LABELS: Record<GuideItem['type'], string> = {
@@ -133,7 +133,7 @@ async function add() {
 <template>
   <div class="space-y-8">
     <!-- Editable hero text -->
-    <AdminSiteTextEditor title="Hero sekce" :fields="OKOLI_HERO_FIELDS" section-key="okoli.hero" />
+    <AdminSiteTextEditor title="Hero sekce" :fields="OKOLI_HERO_FIELDS" section-key="area.hero" />
 
     <!-- Add form -->
     <div class="rounded-2xl bg-surface p-5 shadow-sm">

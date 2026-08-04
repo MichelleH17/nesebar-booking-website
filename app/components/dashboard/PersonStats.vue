@@ -20,8 +20,8 @@ function canOpen(ownerId: number, departure: string): boolean {
 }
 
 function openStay(id: number) {
-  // `zpet` tells the reservation form where its Zpět button should return to.
-  navigateTo(`/rezervace/${id}?zpet=prehled`)
+  // `from` tells the reservation form where its Zpět button should return to.
+  navigateTo(`/rezervace/${id}?from=overview`)
 }
 
 const root = useTemplateRef<HTMLElement>('root')

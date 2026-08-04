@@ -13,6 +13,7 @@ Private family reservation site for apartments 15B/16B in Nessebar. Design spec 
 - **Double-booking check** lives in the reservation create/update handler only (never client-only): same apartment, `status = 'active'`, `arrival < existing.departure AND departure > existing.arrival`, excluding the edited id. Conflict → 409 with Czech message. Same-day changeover allowed.
 - **Email never blocks.** `sendReservationMail()` is try/caught; failures are logged and reported in the response, the reservation still succeeds. Missing SMTP env → log rendered email to console.
 - **All user-facing copy is Czech.** Warm, familial tone (this is for family, not customers). **Code comments are English** — even when they describe Czech UI (quoting a Czech label or route inside an English sentence is fine).
+- **Identifiers are English, copy is Czech.** i18n keys, site-text/section keys, query params, variables — all English (`nav.calendar`, `?from=overview`), only the values are Czech. Renaming a site-text or section key needs a matching `UPDATE` on `site_texts` / `section_visibility` in every deployed DB, or admin edits silently revert to defaults.
 - **Public pages leak nothing** — no reservation data reachable without a session.
 
 ## Structure

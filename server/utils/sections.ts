@@ -6,7 +6,7 @@ export const SECTION_KEYS = [
   'home.apartments',
   'home.gallery',
   'home.cta',
-  'okoli.hero',
+  'area.hero',
 ] as const
 
 export type SectionKey = (typeof SECTION_KEYS)[number]

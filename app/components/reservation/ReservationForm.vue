@@ -27,11 +27,11 @@ const props = defineProps<{
 
 const { t } = useI18n()
 
-// ?zpet=prehled → the form was opened from the dashboard, so Zpět returns there.
+// ?from=overview → the form was opened from the dashboard, so Zpět returns there.
 const route = useRoute()
 const backTarget = computed(() => {
-  if (route.query.zpet === 'prehled') return '/prehled'
-  return form.arrival ? `/kalendar?mesic=${form.arrival.slice(0, 7)}` : '/kalendar'
+  if (route.query.from === 'overview') return '/prehled'
+  return form.arrival ? `/kalendar?month=${form.arrival.slice(0, 7)}` : '/kalendar'
 })
 
 const TRAVEL_OPTIONS = [
@@ -140,7 +140,7 @@ async function submit() {
     // Fresh data before the redirect, so the calendar shows the stay right away —
     // and open the calendar on the month the stay starts in.
     await refreshReservations()
-    await navigateTo(`/kalendar?ulozeno=${props.mode === 'new' ? 'nova' : 'upravena'}&mesic=${form.arrival.slice(0, 7)}`)
+    await navigateTo(`/kalendar?saved=${props.mode === 'new' ? 'new' : 'updated'}&month=${form.arrival.slice(0, 7)}`)
   } catch (e: any) {
     errorMsg.value = e?.data?.message ?? e?.statusMessage ?? t('reservation.errSaveFailed')
   } finally {

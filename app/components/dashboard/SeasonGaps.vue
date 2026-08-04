@@ -19,7 +19,7 @@ function bookable(g: SeasonGap): boolean {
 
 function bookGap(apartmentId: string, g: SeasonGap) {
   const arrival = g.from > today ? g.from : today
-  navigateTo(`/rezervace/nova?apartment=${apartmentId}&arrival=${arrival}&zpet=prehled`)
+  navigateTo(`/rezervace/nova?apartment=${apartmentId}&arrival=${arrival}&from=overview`)
 }
 
 const root = useTemplateRef<HTMLElement>('root')

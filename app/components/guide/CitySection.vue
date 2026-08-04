@@ -52,11 +52,11 @@ onMounted(() => {
 
     <div class="mx-auto flex min-h-[50vh] max-w-6xl flex-col items-start justify-end gap-4 px-6 py-16 sm:px-10">
       <h1 class="font-heading text-4xl font-medium tracking-tight leading-[1.05] text-white sm:text-5xl">
-        <span class="city-line block">{{ st('okoli.line1') }}</span>
-        <span class="city-line block">{{ st('okoli.line2') }}</span>
+        <span class="city-line block">{{ st('area.line1') }}</span>
+        <span class="city-line block">{{ st('area.line2') }}</span>
       </h1>
       <p class="city-sub max-w-2xl font-sans text-lg text-white/85">
-        {{ st('okoli.intro') }}
+        {{ st('area.intro') }}
       </p>
     </div>
   </section>

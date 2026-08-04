@@ -22,9 +22,9 @@ export const SITE_TEXT_DEFAULTS: Record<string, SiteText> = {
     cs: 'Podívejte se, co dělat v okolí, nebo rovnou naplánujte svůj pobyt.',
     en: 'See what to do nearby, or plan your stay right away.',
   },
-  'okoli.line1': { cs: 'Nesebar a jeho', en: 'Nessebar and its' },
-  'okoli.line2': { cs: 'okolí', en: 'surroundings' },
-  'okoli.intro': {
+  'area.line1': { cs: 'Nesebar a jeho', en: 'Nessebar and its' },
+  'area.line2': { cs: 'okolí', en: 'surroundings' },
+  'area.intro': {
     cs: 'Naše staré město leží na malém poloostrově a je zapsané v seznamu UNESCO — kamenné uličky, dřevěné domy a kostely staré stovky let. Kolem dokola písečné pláže, výlety podél pobřeží a všechno, co potřebujete vědět pro klidný pobyt.',
     en: 'Our old town sits on a small peninsula and is a UNESCO World Heritage site — stone lanes, wooden houses and churches hundreds of years old. All around: sandy beaches, trips along the coast and everything you need for a calm stay.',
   },
