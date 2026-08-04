@@ -1,3 +1,9 @@
+<script setup lang="ts">
+useHead({
+  titleTemplate: (title?: string) => (title && title !== 'Nesebar' ? `Nesebar · ${title}` : 'Nesebar'),
+})
+</script>
+
 <template>
   <div class="flex min-h-screen flex-col bg-white font-sans text-ink">
     <a
