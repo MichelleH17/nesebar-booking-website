@@ -8,7 +8,7 @@
     </a>
     <NuxtRouteAnnouncer />
     <AppHeader />
-    <main id="main-content" class="flex-1">
+    <main id="main-content" class="flex flex-1 flex-col">
       <NuxtPage />
     </main>
     <AppFooter />

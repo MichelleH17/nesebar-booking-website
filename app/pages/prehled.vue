@@ -18,7 +18,7 @@ const { data: stats } = await useFetch<Stats>('/api/stats', {
 </script>
 
 <template>
-  <div class="min-h-[calc(100vh-8rem)] bg-cloud px-4 py-10 sm:px-6 sm:py-14">
+  <div class="flex-1 bg-cloud px-4 py-10 sm:px-6 sm:py-14">
     <div class="mx-auto max-w-4xl">
       <div class="mb-8 flex items-center justify-between">
         <h1 class="font-heading text-4xl font-medium tracking-tight text-night sm:text-5xl">Přehled</h1>

@@ -102,7 +102,7 @@ const showOccupancy = computed(() => user.value?.role !== 'guest')
 </script>
 
 <template>
-  <div class="min-h-[calc(100vh-8rem)] bg-cloud px-4 py-10 sm:px-6 sm:py-14">
+  <div class="flex-1 bg-cloud px-4 py-10 sm:px-6 sm:py-14">
     <div class="mx-auto max-w-3xl">
     <h1 class="mb-8 font-heading text-4xl font-medium tracking-tight text-night sm:text-5xl">{{ t('calendar.title') }}</h1>
 

@@ -43,7 +43,7 @@ async function onDemo() {
 </script>
 
 <template>
-  <div class="grid min-h-[calc(100vh-8rem)] bg-white lg:grid-cols-2">
+  <div class="grid flex-1 bg-white lg:grid-cols-2">
     <!-- Form -->
     <div class="flex items-center justify-center px-6 py-16 sm:px-10">
       <div class="w-full max-w-sm">
