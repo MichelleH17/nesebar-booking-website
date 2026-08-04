@@ -11,10 +11,10 @@ const props = withDefaults(
   { home: false },
 )
 
-const root = ref<HTMLElement | null>(null)
+const root = useTemplateRef<HTMLElement>('root')
 
 const hasData = computed(() => props.weather.current !== null || props.weather.daily.length > 0)
-const days = computed(() => props.weather.daily.slice(0, 5))
+const days = computed(() => props.weather.daily.slice(0, 6))
 
 const round = (n: number) => Math.round(n)
 
@@ -30,7 +30,7 @@ useScrollAnimations(root, ({ revealUp }) => {
 
 <template>
   <section ref="root" class="bg-white px-6 py-10 md:py-16 lg:py-20 sm:px-10">
-    <div class="mx-auto max-w-6xl rounded-2xl bg-cloud p-8 sm:p-12">
+    <div class="mx-auto max-w-175 rounded-2xl bg-cloud p-8 sm:p-12">
       <h2
         class="gs-hidden weather-reveal font-heading font-medium tracking-tight text-night"
         :class="home ? 'text-4xl sm:text-5xl' : 'text-3xl sm:text-4xl'"
@@ -42,7 +42,7 @@ useScrollAnimations(root, ({ revealUp }) => {
         v-if="hasData"
         class="gs-hidden weather-reveal mt-8"
       >
-        <div class="flex flex-wrap items-start justify-between">
+        <div class="flex flex-wrap items-start justify-between gap-6">
           <div v-if="weather.current">
             <p class="font-sans text-sm text-stone">
               {{ t('weather.now') }}
@@ -71,11 +71,11 @@ useScrollAnimations(root, ({ revealUp }) => {
           </div>
         </div>
 
-        <div v-if="days.length" class="mt-8 grid grid-cols-5 gap-2 border-t border-cloud pt-6">
+        <div v-if="days.length" class="mt-8 grid grid-cols-2 gap-2 border-t border-cloud pt-6 sm:grid-cols-3 md:grid-cols-6">
           <div
             v-for="day in days"
             :key="day.date"
-            class="flex flex-col items-center gap-1 text-center"
+            class="mx-auto flex w-full max-w-3xs items-center justify-between gap-1 rounded-2xl border border-cloud bg-white px-4 py-3 text-center sm:max-w-none sm:flex-col sm:justify-center sm:px-2"
           >
             <span class="font-sans text-sm font-medium uppercase text-stone">{{ weekday(day.date) }}</span>
             <span class="font-sans text-sm font-semibold text-night">{{ round(day.max) }}°</span>

@@ -48,7 +48,7 @@
   },
   "weather": {
     "heading": "Počasí",
-    "now": "Právě teď v Nesebaru",
+    "now": "Právě teď",
     "seaTemp": "Teplota moře",
     "error": "Počasí se nepodařilo načíst 🌥️"
   },
