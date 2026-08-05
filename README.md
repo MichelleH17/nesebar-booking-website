@@ -1,6 +1,6 @@
 # Nesebar Booking Website
 
-Private family reservation site for two apartments (15B, 16B) in Nesebar, Bulgaria. Built with Nuxt 4, Tailwind CSS 4, GSAP + ScrollTrigger, SQLite (better-sqlite3 + Drizzle ORM), and Nodemailer for email notifications. Czech-only UI.
+Private family reservation site for two apartments (15B, 16B) in Nesebar, Bulgaria. Built with Nuxt 4, Tailwind CSS 4, GSAP + ScrollTrigger, SQLite via libSQL (Turso in production) with Drizzle ORM, and Nodemailer for email notifications. Czech-only UI.
 
 ## Features
 
