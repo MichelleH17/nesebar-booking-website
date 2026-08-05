@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const db = useDb()
-  const existing = db.select().from(guideItems).where(eq(guideItems.id, id)).get()
+  const existing = await db.select().from(guideItems).where(eq(guideItems.id, id)).get()
   if (!existing) {
     throw createError({ statusCode: 404, message: 'Položka nenalezena.' })
   }
@@ -85,5 +85,18 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, message: 'Žádná data k úpravě.' })
   }
 
-  return db.update(guideItems).set(update).where(eq(guideItems.id, id)).returning().get()
+  const updated = await db.update(guideItems).set(update).where(eq(guideItems.id, id)).returning().get()
+
+  // Blob URLs are unique per upload, so nothing else can reference the replaced one —
+  // drop it now rather than waiting for the manual sweep. Local files may be shared.
+  if (
+    update.imageUrl !== undefined
+    && existing.imageUrl
+    && existing.imageUrl !== update.imageUrl
+    && existing.imageUrl.startsWith('http')
+  ) {
+    await deleteUploadedImage(existing.imageUrl)
+  }
+
+  return updated
 })

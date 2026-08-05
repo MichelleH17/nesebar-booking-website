@@ -51,12 +51,12 @@ function formatCzDateRange(arrival: string, departure: string): string {
   return `${ad}. ${CZ_MONTHS[am - 1]} ${ay} – ${dd}. ${CZ_MONTHS[dm - 1]} ${dy}`
 }
 
-function resolveRecipients(r: ReservationRow): string[] {
+async function resolveRecipients(r: ReservationRow): Promise<string[]> {
   if (r.notifyEmails && r.notifyEmails.length > 0) {
     return r.notifyEmails
   }
   const db = useDb()
-  const active = db
+  const active = await db
     .select()
     .from(mailRecipients)
     .where(eq(mailRecipients.active, true))
@@ -76,7 +76,7 @@ export async function sendReservationMail(
 ): Promise<{ sent: boolean }> {
   try {
     const db = useDb()
-    const apartment = db.select().from(apartments).where(eq(apartments.id, r.apartmentId)).get()
+    const apartment = await db.select().from(apartments).where(eq(apartments.id, r.apartmentId)).get()
     const apartmentName = apartment?.name ?? r.apartmentId
 
     const n = nights(r.arrival, r.departure)
@@ -112,7 +112,7 @@ export async function sendReservationMail(
       </div>
     `.trim()
 
-    const recipients = resolveRecipients(r)
+    const recipients = await resolveRecipients(r)
     const config = useRuntimeConfig()
 
     if (!config.smtpHost) {

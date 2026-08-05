@@ -19,7 +19,7 @@ export default defineEventHandler(async (event) => {
   const valueEn = body.valueEn.trim()
 
   const db = useDb()
-  db.insert(siteTexts)
+  await db.insert(siteTexts)
     .values({ key, valueCs, valueEn })
     .onConflictDoUpdate({ target: siteTexts.key, set: { valueCs, valueEn } })
     .run()

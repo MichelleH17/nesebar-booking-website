@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
   const db = useDb()
   if (all) {
     await requireAdmin(event)
-    return db.select().from(guideItems).all()
+    return await db.select().from(guideItems).all()
   }
-  return db.select().from(guideItems).where(eq(guideItems.hidden, false)).all()
+  return await db.select().from(guideItems).where(eq(guideItems.hidden, false)).all()
 })

@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
   const user = await requireAuth(event)
   const db = useDb()
 
-  const rows = db
+  const rows = await db
     .select({
       id: reservations.id,
       apartmentId: reservations.apartmentId,

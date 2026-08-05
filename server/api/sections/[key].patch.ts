@@ -17,7 +17,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const db = useDb()
-  db.insert(sectionVisibility)
+  await db.insert(sectionVisibility)
     .values({ key, hidden: body.hidden })
     .onConflictDoUpdate({ target: sectionVisibility.key, set: { hidden: body.hidden } })
     .run()

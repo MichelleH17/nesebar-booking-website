@@ -16,7 +16,7 @@ export default defineEventHandler(async (event) => {
   const session = await getUserSession(event)
   const user = session?.user as { name?: string; role?: string } | undefined
 
-  useDb().insert(pageViews).values({
+  await useDb().insert(pageViews).values({
     ts: new Date().toISOString(),
     visitor,
     path,

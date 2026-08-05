@@ -10,11 +10,14 @@ export default defineEventHandler(async (event) => {
   }
 
   const db = useDb()
-  const existing = db.select().from(guideItems).where(eq(guideItems.id, id)).get()
+  const existing = await db.select().from(guideItems).where(eq(guideItems.id, id)).get()
   if (!existing) {
     throw createError({ statusCode: 404, message: 'Položka nenalezena.' })
   }
 
-  db.delete(guideItems).where(eq(guideItems.id, id)).run()
+  await db.delete(guideItems).where(eq(guideItems.id, id)).run()
+  // Blob URLs are unique per upload, so nothing else can reference this one — drop it
+  // now rather than waiting for the manual sweep. Local files may be shared; leave those.
+  if (existing.imageUrl?.startsWith('http')) await deleteUploadedImage(existing.imageUrl)
   return { success: true }
 })

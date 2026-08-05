@@ -1,7 +1,7 @@
 import { eq } from 'drizzle-orm'
 import { useDb } from '~~/server/db'
 import { reservations } from '~~/server/db/schema'
-import { validateReservationInput, assertNoConflict } from '~~/server/utils/reservations'
+import { validateReservationInput, assertNoConflict, bookingTransaction } from '~~/server/utils/reservations'
 
 export default defineEventHandler(async (event) => {
   const user = await requireAuth(event)
@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const db = useDb()
-  const row = db.select().from(reservations).where(eq(reservations.id, id)).get()
+  const row = await db.select().from(reservations).where(eq(reservations.id, id)).get()
   if (!row) {
     throw createError({ statusCode: 404, message: 'Rezervace nenalezena.' })
   }
@@ -32,26 +32,29 @@ export default defineEventHandler(async (event) => {
   const body = await readBody(event)
   const input = await validateReservationInput(body)
 
-  assertNoConflict(db, input.apartmentId, input.arrival, input.departure, user.role, id)
+  // Overlap check and update must share one transaction — see reservations/index.post.ts.
+  const updated = await bookingTransaction(db, async (tx) => {
+    await assertNoConflict(tx, input.apartmentId, input.arrival, input.departure, user.role, id)
 
-  const updated = db
-    .update(reservations)
-    .set({
-      apartmentId: input.apartmentId,
-      guestName: input.guestName,
-      people: input.people,
-      arrival: input.arrival,
-      departure: input.departure,
-      travelMethod: input.travelMethod as any,
-      notes: input.notes,
-      priceApplied: input.priceApplied,
-      forGuest: input.forGuest,
-      notifyEmails: input.notifyEmails,
-      updatedAt: new Date().toISOString(),
-    })
-    .where(eq(reservations.id, id))
-    .returning()
-    .get()
+    return await tx
+      .update(reservations)
+      .set({
+        apartmentId: input.apartmentId,
+        guestName: input.guestName,
+        people: input.people,
+        arrival: input.arrival,
+        departure: input.departure,
+        travelMethod: input.travelMethod as any,
+        notes: input.notes,
+        priceApplied: input.priceApplied,
+        forGuest: input.forGuest,
+        notifyEmails: input.notifyEmails,
+        updatedAt: new Date().toISOString(),
+      })
+      .where(eq(reservations.id, id))
+      .returning()
+      .get()
+  })
 
   const { sent } = await sendReservationMail('updated', updated)
 

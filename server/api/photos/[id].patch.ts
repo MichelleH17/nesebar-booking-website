@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const db = useDb()
-  const existing = db.select().from(photos).where(eq(photos.id, id)).get()
+  const existing = await db.select().from(photos).where(eq(photos.id, id)).get()
   if (!existing) {
     throw createError({ statusCode: 404, message: 'Fotka nenalezena.' })
   }
@@ -61,5 +61,5 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, message: 'Žádná data k úpravě.' })
   }
 
-  return db.update(photos).set(update).where(eq(photos.id, id)).returning().get()
+  return await db.update(photos).set(update).where(eq(photos.id, id)).returning().get()
 })

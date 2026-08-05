@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
   const id = getRouterParam(event, 'id')
   const db = useDb()
 
-  const existing = db.select().from(apartments).where(eq(apartments.id, id!)).get()
+  const existing = await db.select().from(apartments).where(eq(apartments.id, id!)).get()
   if (!existing) {
     throw createError({ statusCode: 404, message: 'Byt nenalezen.' })
   }
@@ -80,5 +80,5 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, message: 'Žádná data k úpravě.' })
   }
 
-  return db.update(apartments).set(update).where(eq(apartments.id, id!)).returning().get()
+  return await db.update(apartments).set(update).where(eq(apartments.id, id!)).returning().get()
 })

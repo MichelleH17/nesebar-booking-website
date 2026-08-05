@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const db = useDb()
-  const existing = db.select().from(mailRecipients).where(eq(mailRecipients.id, id)).get()
+  const existing = await db.select().from(mailRecipients).where(eq(mailRecipients.id, id)).get()
   if (!existing) {
     throw createError({ statusCode: 404, message: 'Příjemce nenalezen.' })
   }
@@ -28,7 +28,7 @@ export default defineEventHandler(async (event) => {
     if (typeof body.email !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)) {
       throw createError({ statusCode: 400, message: 'Neplatný e-mail.' })
     }
-    const dup = db.select().from(mailRecipients).all().find((r) => r.email === body.email && r.id !== id)
+    const dup = (await db.select().from(mailRecipients).all()).find((r) => r.email === body.email && r.id !== id)
     if (dup) {
       throw createError({ statusCode: 400, message: 'Tento e-mail už je zaregistrovaný.' })
     }
@@ -51,5 +51,5 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, message: 'Žádná data k úpravě.' })
   }
 
-  return db.update(mailRecipients).set(update).where(eq(mailRecipients.id, id)).returning().get()
+  return await db.update(mailRecipients).set(update).where(eq(mailRecipients.id, id)).returning().get()
 })

@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
 
   const db = useDb()
 
-  const resRows = db
+  const resRows = await db
     .select({
       id: reservations.id,
       apartmentId: reservations.apartmentId,
@@ -26,7 +26,7 @@ export default defineEventHandler(async (event) => {
     .from(reservations)
     .all() as StatsReservation[]
 
-  const userRows = db
+  const userRows = await db
     .select({ id: users.id, name: users.name, color: users.color, role: users.role })
     .from(users)
     .orderBy(users.sortOrder, users.id)

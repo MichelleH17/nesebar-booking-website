@@ -4,7 +4,7 @@ import { users } from '~~/server/db/schema'
 export default defineEventHandler(async (event) => {
   await requireAdmin(event)
   const db = useDb()
-  return db
+  return await db
     .select({
       id: users.id,
       name: users.name,

@@ -4,5 +4,5 @@ import { pageViews } from '~~/server/db/schema'
 
 export default defineEventHandler(async (event) => {
   await requireAdmin(event)
-  return useDb().select().from(pageViews).orderBy(desc(pageViews.id)).limit(1000).all()
+  return await useDb().select().from(pageViews).orderBy(desc(pageViews.id)).limit(1000).all()
 })

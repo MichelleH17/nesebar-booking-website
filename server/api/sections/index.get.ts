@@ -3,9 +3,9 @@ import { sectionVisibility } from '~~/server/db/schema'
 import { SECTION_KEYS } from '~~/server/utils/sections'
 
 // Public: returns { key: hidden } for every known section (default false = visible).
-export default defineEventHandler(() => {
+export default defineEventHandler(async () => {
   const db = useDb()
-  const rows = db.select().from(sectionVisibility).all()
+  const rows = await db.select().from(sectionVisibility).all()
   const stored = new Map(rows.map(r => [r.key, r.hidden]))
 
   const result: Record<string, boolean> = {}

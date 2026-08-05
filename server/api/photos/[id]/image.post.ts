@@ -1,6 +1,4 @@
 import { eq } from 'drizzle-orm'
-import { rmSync } from 'node:fs'
-import { join } from 'node:path'
 import { useDb } from '~~/server/db'
 import { photos } from '~~/server/db/schema'
 
@@ -13,7 +11,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const db = useDb()
-  const existing = db.select().from(photos).where(eq(photos.id, id)).get()
+  const existing = await db.select().from(photos).where(eq(photos.id, id)).get()
   if (!existing) {
     throw createError({ statusCode: 404, message: 'Fotka nenalezena.' })
   }
@@ -23,14 +21,13 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, message: 'Chybí data formuláře.' })
   }
 
-  const url = saveUploadedImage(parts.find((p) => p.name === 'file'))
-  const row = db.update(photos).set({ url }).where(eq(photos.id, id)).returning().get()
+  const url = await saveUploadedImage(parts.find((p) => p.name === 'file'))
+  const row = await db.update(photos).set({ url }).where(eq(photos.id, id)).returning().get()
 
-  // Remove the old file only if nothing references it anymore
+  // Remove the old image only if nothing references it anymore
   // (listOrphanUploads keeps placeholder-* and shared files safe).
-  const oldFilename = existing.url.startsWith('/uploads/') ? existing.url.slice('/uploads/'.length) : null
-  if (oldFilename && listOrphanUploads().includes(oldFilename)) {
-    rmSync(join(uploadsDirPath(), oldFilename), { force: true })
+  if ((await listOrphanUploads()).includes(existing.url)) {
+    await deleteUploadedImage(existing.url)
   }
 
   return row

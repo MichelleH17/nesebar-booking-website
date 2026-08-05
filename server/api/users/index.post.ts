@@ -25,14 +25,14 @@ export default defineEventHandler(async (event) => {
   }
 
   const db = useDb()
-  const existing = db.select().from(users).all().find((u) => u.email === body.email)
+  const existing = (await db.select().from(users).all()).find((u) => u.email === body.email)
   if (existing) {
     throw createError({ statusCode: 400, message: 'Tento e-mail už je zaregistrovaný.' })
   }
 
   const passwordHash = await hashPassword(body.password)
 
-  const row = db
+  const row = await db
     .insert(users)
     .values({
       name: body.name.trim(),

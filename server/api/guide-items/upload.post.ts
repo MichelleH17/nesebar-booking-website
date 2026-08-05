@@ -7,6 +7,6 @@ export default defineEventHandler(async (event) => {
   }
 
   // Saves to public/uploads without creating a gallery (photos) row.
-  const url = saveUploadedImage(parts.find((p) => p.name === 'file'))
+  const url = await saveUploadedImage(parts.find((p) => p.name === 'file'))
   return { url }
 })

@@ -1,5 +1,5 @@
 import { and, eq, ne } from 'drizzle-orm'
-import { useDb } from '~~/server/db'
+import { useDb, type Db, type DbOrTx } from '~~/server/db'
 import { reservations, mailRecipients, apartments } from '~~/server/db/schema'
 import { overlaps, calcPrice, nights as nightsBetween } from '~~/shared/utils/booking'
 import type { SessionUser } from '~~/server/utils/session'
@@ -65,7 +65,7 @@ export async function validateReservationInput(body: any): Promise<ReservationIn
 
   let priceValue: number | null = null
   if (wantsPaid) {
-    const apartment = useDb().select().from(apartments).where(eq(apartments.id, apartmentId)).get()
+    const apartment = await useDb().select().from(apartments).where(eq(apartments.id, apartmentId)).get()
     // Apartment with hidden pricing → stays are always recorded without a price.
     if (apartment && !apartment.priceHidden) {
       priceValue = calcPrice(nightsBetween(arrival, departure), apartment.nightlyRate, people, apartment.perPersonPricing)
@@ -79,7 +79,7 @@ export async function validateReservationInput(body: any): Promise<ReservationIn
     }
     if (notifyEmails.length > 0) {
       const db = useDb()
-      const active = db.select().from(mailRecipients).where(eq(mailRecipients.active, true)).all()
+      const active = await db.select().from(mailRecipients).where(eq(mailRecipients.active, true)).all()
       const activeEmails = new Set(active.map((r) => r.email))
       for (const e of notifyEmails) {
         if (!activeEmails.has(e)) {
@@ -104,8 +104,28 @@ export async function validateReservationInput(body: any): Promise<ReservationIn
   }
 }
 
-export function assertNoConflict(
-  db: ReturnType<typeof useDb>,
+/**
+ * Runs the overlap check + write as one transaction. libSQL opens it with BEGIN
+ * IMMEDIATE, so two concurrent bookings for the same dates can't both pass the
+ * check — but the loser surfaces as SQLITE_BUSY, which is the same situation
+ * assertNoConflict reports as a 409, not a server error.
+ */
+export async function bookingTransaction<T>(db: Db, fn: (tx: DbOrTx) => Promise<T>): Promise<T> {
+  try {
+    return await db.transaction(fn)
+  } catch (e: any) {
+    if (e?.code === 'SQLITE_BUSY' || /SQLITE_BUSY|database is locked/i.test(String(e?.message ?? ''))) {
+      throw createError({
+        statusCode: 409,
+        message: 'Tento termín právě rezervuje někdo jiný. Zkuste to prosím znovu.',
+      })
+    }
+    throw e
+  }
+}
+
+export async function assertNoConflict(
+  db: DbOrTx,
   apartmentId: string,
   arrival: string,
   departure: string,
@@ -116,7 +136,7 @@ export function assertNoConflict(
   if (excludeId !== undefined) {
     conditions.push(ne(reservations.id, excludeId))
   }
-  const existing = db.select().from(reservations).where(and(...conditions)).all()
+  const existing = await db.select().from(reservations).where(and(...conditions)).all()
 
   for (const row of existing) {
     if (overlaps({ arrival, departure }, { arrival: row.arrival, departure: row.departure })) {

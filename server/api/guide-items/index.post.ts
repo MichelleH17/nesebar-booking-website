@@ -40,7 +40,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const db = useDb()
-  return db
+  return await db
     .insert(guideItems)
     .values({
       type: body.type,

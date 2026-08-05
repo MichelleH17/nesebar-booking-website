@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const db = useDb()
-  const user = db.select().from(users).where(eq(users.email, email)).get()
+  const user = await db.select().from(users).where(eq(users.email, email)).get()
 
   if (!user) {
     throw createError({ statusCode: 401, message: 'Nesprávný e-mail nebo heslo.' })

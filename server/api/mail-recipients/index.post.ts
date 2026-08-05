@@ -13,7 +13,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const db = useDb()
-  const existing = db.select().from(mailRecipients).all().find((r) => r.email === body.email)
+  const existing = (await db.select().from(mailRecipients).all()).find((r) => r.email === body.email)
   if (existing) {
     throw createError({ statusCode: 400, message: 'Tento e-mail už je zaregistrovaný.' })
   }
@@ -33,7 +33,7 @@ export default defineEventHandler(async (event) => {
     sortOrder = body.sortOrder
   }
 
-  return db
+  return await db
     .insert(mailRecipients)
     .values({ name: body.name.trim(), email: body.email, active, sortOrder })
     .returning()

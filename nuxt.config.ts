@@ -15,6 +15,15 @@ export default defineNuxtConfig({
     },
   },
   modules: ['nuxt-auth-utils', '@nuxt/fonts', '@nuxtjs/i18n'],
+  nitro: {
+    // The default @libsql/client entry requires a native binary Nitro can't trace
+    // into the serverless bundle. Production always talks to Turso over HTTP, so
+    // build against the pure-JS client; dev keeps the native one for the local file DB.
+    alias: process.env.NODE_ENV === 'production' ? {
+          '@libsql/client/node': '@libsql/client/http',
+          'drizzle-orm/libsql/node': 'drizzle-orm/libsql/http',
+        } : {},
+  },
   css: ['~/assets/css/main.css'],
   vite: {
     plugins: [tailwindcss()],

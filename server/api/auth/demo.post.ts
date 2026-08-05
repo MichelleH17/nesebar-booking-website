@@ -7,7 +7,7 @@ import { users } from '~~/server/db/schema'
 // which keeps the "Vyzkoušet ukázku" button inert there.
 export default defineEventHandler(async (event) => {
   const db = useDb()
-  const user = db.select().from(users).where(eq(users.role, 'demo')).get()
+  const user = await db.select().from(users).where(eq(users.role, 'demo')).get()
 
   if (!user) {
     throw createError({ statusCode: 404, message: 'Ukázkový účet není k dispozici.' })

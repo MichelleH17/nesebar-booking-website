@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const db = useDb()
-  const row = db.select().from(reservations).where(eq(reservations.id, id)).get()
+  const row = await db.select().from(reservations).where(eq(reservations.id, id)).get()
   if (!row) {
     throw createError({ statusCode: 404, message: 'Rezervace nenalezena.' })
   }

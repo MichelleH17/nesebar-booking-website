@@ -47,10 +47,10 @@ export default defineEventHandler(async (event) => {
   }
 
   // Validation above runs first so no file is written for an invalid request.
-  const url = saveUploadedImage(filePart)
+  const url = await saveUploadedImage(filePart)
 
   const db = useDb()
-  const row = db
+  const row = await db
     .insert(photos)
     .values({ apartmentId, url, alt, altEn, sortOrder })
     .returning()

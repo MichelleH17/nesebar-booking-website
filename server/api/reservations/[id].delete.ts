@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const db = useDb()
-  const row = db.select().from(reservations).where(eq(reservations.id, id)).get()
+  const row = await db.select().from(reservations).where(eq(reservations.id, id)).get()
   if (!row) {
     throw createError({ statusCode: 404, message: 'Rezervace nenalezena.' })
   }
@@ -23,7 +23,7 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, message: 'Rezervace je již zrušená.' })
   }
 
-  const updated = db
+  const updated = await db
     .update(reservations)
     .set({ status: 'cancelled', updatedAt: new Date().toISOString() })
     .where(eq(reservations.id, id))
