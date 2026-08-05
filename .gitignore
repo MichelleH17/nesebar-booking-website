@@ -29,6 +29,9 @@ server/db/seed.ts
 # Internal planning docs (specs/plans/briefs/reports/reviews) — local only
 docs/
 
-# Real uploaded photos — never commit, only the tracked placeholder-*.svg fallbacks
+# Real uploaded photos — never commit, only the tracked placeholder-*.svg fallbacks.
+# The numbered ones look like seed output but the seeded production DB stores
+# /uploads/placeholder-N.svg photo rows, so they must ship as static assets or
+# the gallery 404s until every photo is replaced through the admin UI.
 public/uploads/*
 !public/uploads/placeholder-*.svg
