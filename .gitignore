@@ -35,3 +35,4 @@ docs/
 # the gallery 404s until every photo is replaced through the admin UI.
 public/uploads/*
 !public/uploads/placeholder-*.svg
+.vercel
