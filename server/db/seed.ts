@@ -62,8 +62,8 @@ async function main() {
 
   // --- Apartments ---
   await db.insert(apartments).values([
-    { id: '15B', label: '15B', name: 'U rodičů', nameEn: "At the parents'", description: 'Útulný byt s výhledem na moře, ideální pro rodinu.', descriptionEn: 'A cosy apartment with a sea view, ideal for a family.', capacity: 4, nightlyRate: 1100, perPersonPricing: false },
-    { id: '16B', label: '16B', name: 'U bratra', nameEn: "At the brother's", description: 'Prostorný byt kousek od pláže, více místa pro větší skupinu.', descriptionEn: 'A spacious apartment a short walk from the beach, with more room for a larger group.', capacity: 5, nightlyRate: 1300, perPersonPricing: false },
+    { id: '15B', label: '15B', name: 'Apartmán 15B - rodiče', nameEn: 'Apartment 15B - parents', description: 'Útulný apartmán pro až 3 osoby s výhledem na bazén a přímým vstupem na společný balkon.', descriptionEn: 'A cosy apartment for up to 3 guests with a pool view and direct access to the shared balcony.', capacity: 3, nightlyRate: 1100, perPersonPricing: false },
+    { id: '16B', label: '16B', name: 'Apartmán 16B - bratr', nameEn: 'Apartment 16B - brother', description: 'Apartmán pro až 4 osoby s výhledem na bazén a přímým vstupem na společný balkon.', descriptionEn: 'An apartment for up to 4 guests with a pool view and direct access to the shared balcony.', capacity: 4, nightlyRate: 1300, perPersonPricing: false },
   ]).run()
 
   // --- Users ---
@@ -197,7 +197,7 @@ async function main() {
       apartmentId: '16B',
       userId: uid('vojta@example.com'),
       guestName: 'Vojta',
-      people: 5,
+      people: 4,
       arrival: todayPlus(55),
       departure: todayPlus(58),
       travelMethod: 'car',
@@ -215,12 +215,12 @@ async function main() {
   mkdirSync(uploadsDir, { recursive: true })
 
   const photoDefs: { apartmentId: string | null; alt: string; altEn: string; colorA: string; colorB: string }[] = [
-    { apartmentId: '15B', alt: 'Obývací pokoj bytu U rodičů', altEn: "Living room of the At the parents' apartment", colorA: '#EFE6D8', colorB: '#C96F4A' },
-    { apartmentId: '15B', alt: 'Ložnice bytu U rodičů', altEn: "Bedroom of the At the parents' apartment", colorA: '#FAF6EF', colorB: '#A54F2E' },
-    { apartmentId: '15B', alt: 'Balkon s výhledem na moře, U rodičů', altEn: "Balcony with a sea view, At the parents'", colorA: '#4A90A4', colorB: '#EFE6D8' },
-    { apartmentId: '16B', alt: 'Obývací pokoj bytu U bratra', altEn: "Living room of the At the brother's apartment", colorA: '#EFE6D8', colorB: '#7A9E65' },
-    { apartmentId: '16B', alt: 'Kuchyň bytu U bratra', altEn: "Kitchen of the At the brother's apartment", colorA: '#FAF6EF', colorB: '#C96F4A' },
-    { apartmentId: '16B', alt: 'Terasa bytu U bratra', altEn: "Terrace of the At the brother's apartment", colorA: '#2F6577', colorB: '#EFE6D8' },
+    { apartmentId: '15B', alt: 'Obývací pokoj apartmánu 15B', altEn: 'Living room of apartment 15B', colorA: '#EFE6D8', colorB: '#C96F4A' },
+    { apartmentId: '15B', alt: 'Ložnice apartmánu 15B', altEn: 'Bedroom of apartment 15B', colorA: '#FAF6EF', colorB: '#A54F2E' },
+    { apartmentId: '15B', alt: 'Společný balkon s výhledem na bazén, apartmán 15B', altEn: 'Shared balcony with a pool view, apartment 15B', colorA: '#4A90A4', colorB: '#EFE6D8' },
+    { apartmentId: '16B', alt: 'Obývací pokoj apartmánu 16B', altEn: 'Living room of apartment 16B', colorA: '#EFE6D8', colorB: '#7A9E65' },
+    { apartmentId: '16B', alt: 'Kuchyň apartmánu 16B', altEn: 'Kitchen of apartment 16B', colorA: '#FAF6EF', colorB: '#C96F4A' },
+    { apartmentId: '16B', alt: 'Společný balkon s výhledem na bazén, apartmán 16B', altEn: 'Shared balcony with a pool view, apartment 16B', colorA: '#2F6577', colorB: '#EFE6D8' },
     { apartmentId: null, alt: 'Pláž v Nesebaru', altEn: 'Beach in Nesebar', colorA: '#4A90A4', colorB: '#FAF6EF' },
     { apartmentId: null, alt: 'Staré město Nesebar', altEn: 'Nesebar old town', colorA: '#C96F4A', colorB: '#EFE6D8' },
     { apartmentId: null, alt: 'Západ slunce nad mořem', altEn: 'Sunset over the sea', colorA: '#A54F2E', colorB: '#2F6577' },
@@ -239,16 +239,14 @@ async function main() {
     }).run()
   }
 
-  // --- Guide items: 3 beaches, 5 trips, 3 info blocks ---
+  // --- Guide items: 2 beaches, 4 trips, 3 info blocks ---
   await db.insert(guideItems).values([
-    { type: 'beach', title: 'Centrální pláž Nesebar', titleEn: 'Nesebar central beach', description: 'Široká písečná pláž hned pod starým městem, plná lehátek a plážových barů. Ideální na dopolední koupání.', descriptionEn: 'A wide sandy beach right below the old town, full of sun loungers and beach bars. Ideal for a morning swim.', imageUrl: null, meta: '5 min pěšky', metaEn: '5 min on foot', sortOrder: 0 },
-    { type: 'beach', title: 'Jižní pláž', titleEn: 'South beach', description: 'Klidnější úsek pláže s jemnějším pískem, méně turistů než u centra.', descriptionEn: 'A quieter stretch of beach with finer sand and fewer tourists than the centre.', imageUrl: null, meta: '10 min pěšky', metaEn: '10 min on foot', sortOrder: 1 },
-    { type: 'beach', title: 'Pláž Slunečné pobřeží', titleEn: 'Sunny Beach', description: 'Rušná dlouhá pláž s vodními atrakcemi, skvělá pro děti i večerní procházky.', descriptionEn: 'A busy, long beach with water attractions, great for kids and evening walks.', imageUrl: null, meta: '15 min autem', metaEn: '15 min by car', sortOrder: 2 },
-    { type: 'trip', title: 'Slunečné pobřeží', titleEn: 'Sunny Beach', description: 'Největší bulharské letovisko s promenádou, obchody a zábavou pro celou rodinu.', descriptionEn: "Bulgaria's largest resort with a promenade, shops and entertainment for the whole family.", imageUrl: null, meta: '15 min autem', metaEn: '15 min by car', sortOrder: 0 },
-    { type: 'trip', title: 'Burgas', titleEn: 'Burgas', description: 'Krajské město s přímořským parkem, zoo a příjemným centrem na procházku.', descriptionEn: 'A regional city with a seaside park, a zoo and a pleasant centre for a stroll.', imageUrl: null, meta: '40 min autem', metaEn: '40 min by car', sortOrder: 1 },
-    { type: 'trip', title: 'Sozopol', titleEn: 'Sozopol', description: 'Malebné starobylé městečko na poloostrově, kamenné uličky a rybí restaurace.', descriptionEn: 'A picturesque ancient town on a peninsula, with cobbled lanes and fish restaurants.', imageUrl: null, meta: '1 h autem', metaEn: '1 h by car', sortOrder: 2 },
-    { type: 'trip', title: 'Pomorie', titleEn: 'Pomorie', description: 'Známé slanými jezery a bahenními lázněmi, zajímavá zastávka na den.', descriptionEn: 'Known for its salt lakes and mud spas, an interesting stop for a day.', imageUrl: null, meta: '30 min autem', metaEn: '30 min by car', sortOrder: 3 },
-    { type: 'trip', title: 'Aquapark Nesebar', titleEn: 'Nesebar Aquapark', description: 'Vodní park se skluzavkami a bazény, oblíbený u dětí i dospělých.', descriptionEn: 'A water park with slides and pools, popular with children and adults alike.', imageUrl: null, meta: '10 min autem', metaEn: '10 min by car', sortOrder: 4 },
+    { type: 'beach', title: 'Jižní pláž', titleEn: 'South beach', description: 'Písečná pláž vhodná ke koupání, odpočinku i procházkám.', descriptionEn: 'A sandy beach suitable for swimming, relaxing and walks.', imageUrl: null, meta: null, metaEn: null, sortOrder: 0 },
+    { type: 'beach', title: 'Severní pláž', titleEn: 'North beach', description: 'Další možnost pláže nedaleko Nesebaru.', descriptionEn: 'Another beach option near Nessebar.', imageUrl: null, meta: null, metaEn: null, sortOrder: 1 },
+    { type: 'trip', title: 'Procházka starým městem', titleEn: 'A walk through the old town', description: 'Historické centrum, výhled na moře a večeře v některé z místních restaurací.', descriptionEn: 'The historic centre, a sea view and dinner at one of the local restaurants.', imageUrl: null, meta: null, metaEn: null, sortOrder: 0 },
+    { type: 'trip', title: 'Výlet do okolí', titleEn: 'A trip nearby', description: 'Pomorie, Burgas nebo další místa podél pobřeží jsou snadno dostupné a nabízí jinou atmosféru než samotný Nesebar.', descriptionEn: 'Pomorie, Burgas and other spots along the coast are all easy to reach and offer a different atmosphere than Nessebar itself.', imageUrl: null, meta: null, metaEn: null, sortOrder: 1 },
+    { type: 'trip', title: 'Pomorie', titleEn: 'Pomorie', description: 'Přímořské město známé dlouhou písečnou pláží a tradicí solných jezer a vína.', descriptionEn: 'A coastal town known for its long sandy beach and its salt-lake and wine traditions.', imageUrl: null, meta: '30 min autem', metaEn: '30 min by car', sortOrder: 2 },
+    { type: 'trip', title: 'Burgas', titleEn: 'Burgas', description: 'Krajské město s přímořským parkem, zoo a příjemným centrem na procházku.', descriptionEn: 'A regional city with a seaside park, a zoo and a pleasant centre for a stroll.', imageUrl: null, meta: '40 min autem', metaEn: '40 min by car', sortOrder: 3 },
     { type: 'info', title: 'Wifi a klíče', titleEn: 'Wi-Fi and keys', description: 'Heslo k wifi najdete na lednici, náhradní klíče má Admin — ozvěte se předem.', descriptionEn: 'The Wi-Fi password is on the fridge; the Admin keeps the spare keys — let us know in advance.', imageUrl: null, meta: null, metaEn: null, sortOrder: 0 },
     { type: 'info', title: 'Odpadky a recyklace', titleEn: 'Rubbish and recycling', description: 'Popelnice jsou na dvoře, tříděný odpad u vchodu do domu.', descriptionEn: 'The bins are in the yard; sorted waste is by the entrance to the building.', imageUrl: null, meta: null, metaEn: null, sortOrder: 1 },
     { type: 'info', title: 'Nouzové kontakty', titleEn: 'Emergency contacts', description: 'V případě problémů volejte Adminovi nebo sousedovi panu Ivanovi (kontakt na nástěnce v kuchyni).', descriptionEn: 'In case of problems, call the Admin or our neighbour Mr Ivanov (contact on the kitchen noticeboard).', imageUrl: null, meta: null, metaEn: null, sortOrder: 2 },
