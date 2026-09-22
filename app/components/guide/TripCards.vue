@@ -17,14 +17,14 @@ useScrollAnimations(root, ({ revealUp }) => {
 
 <template>
   <section v-if="trips.length" ref="root" class="bg-white">
-    <div class="mx-auto max-w-6xl px-6 py-10 md:py-16 lg:py-20 sm:px-10">
+    <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-16 lg:py-20">
       <h2 class="gs-hidden font-heading text-3xl font-medium tracking-tight text-night sm:text-4xl">
         {{ t('trips.heading') }}
       </h2>
       <p class="gs-hidden mt-3 max-w-xl font-sans text-stone">
         {{ t('trips.intro') }}
       </p>
-      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="mt-8 grid gap-6 sm:grid-cols-2">
         <article
           v-for="trip in trips"
           :key="trip.id"

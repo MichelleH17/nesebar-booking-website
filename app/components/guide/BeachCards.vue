@@ -16,15 +16,20 @@ useScrollAnimations(root, ({ revealUp }) => {
 </script>
 
 <template>
-  <section v-if="beaches.length" ref="root" class="bg-white px-6 py-10 md:py-16 lg:py-20 sm:px-10">
-    <div class="mx-auto max-w-6xl">
-    <h2 class="gs-hidden font-heading text-3xl font-medium tracking-tight text-night sm:text-4xl">
+  <section
+    v-if="beaches.length"
+    ref="root"
+    class="max-w-6xl mx-auto bg-white px-4 py-10 sm:px-6 md:py-16 lg:py-20"
+  >
+    <h2
+      class="gs-hidden font-heading text-3xl font-medium tracking-tight text-night sm:text-4xl"
+    >
       {{ t('beaches.heading') }}
     </h2>
     <p class="gs-hidden mt-3 max-w-xl font-sans text-stone">
       {{ t('beaches.intro') }}
     </p>
-    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-8 grid gap-6 sm:grid-cols-2">
       <article
         v-for="beach in beaches"
         :key="beach.id"
@@ -54,7 +59,6 @@ useScrollAnimations(root, ({ revealUp }) => {
           </p>
         </div>
       </article>
-    </div>
     </div>
   </section>
 </template>

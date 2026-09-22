@@ -21,7 +21,7 @@ useScrollAnimations(root, ({ revealUp }) => {
 </script>
 
 <template>
-  <section v-if="items.length" ref="root" class="bg-cloud px-6 py-10 md:py-16 lg:py-20 sm:px-10">
+  <section v-if="items.length" ref="root" class="bg-cloud px-4 py-10 sm:px-6 md:py-16 lg:py-20">
     <div class="mx-auto max-w-3xl">
     <h2 class="gs-hidden font-heading text-3xl font-medium tracking-tight text-night sm:text-4xl">
       {{ t('info.heading') }}

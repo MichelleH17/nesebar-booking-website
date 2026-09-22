@@ -50,7 +50,7 @@ onMounted(() => {
       <div class="absolute inset-0 bg-gradient-to-t from-night/85 via-night/35 to-night/10" />
     </div>
 
-    <div class="mx-auto flex min-h-[50vh] max-w-6xl flex-col items-start justify-end gap-4 px-6 py-16 sm:px-10">
+    <div class="mx-auto flex min-h-[50vh] max-w-6xl flex-col items-start justify-end gap-4 px-4 py-16 sm:px-6">
       <h1 class="font-heading text-4xl font-medium tracking-tight leading-[1.05] text-white sm:text-5xl">
         <span class="city-line block">{{ st('area.line1') }}</span>
         <span class="city-line block">{{ st('area.line2') }}</span>

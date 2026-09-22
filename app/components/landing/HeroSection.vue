@@ -53,7 +53,7 @@ onMounted(() => {
       <div class="absolute inset-0 bg-gradient-to-t from-night/85 via-night/35 to-night/10" />
     </div>
 
-    <div class="mx-auto flex min-h-[50vh] max-w-6xl flex-col items-start justify-end gap-5 px-6 py-16 sm:px-10 sm:pb-24">
+    <div class="mx-auto flex min-h-[50vh] max-w-6xl flex-col items-start justify-end gap-5 px-4 py-16 sm:px-6 sm:pb-24">
       <p class="hero-line font-sans text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
         {{ st('home.eyebrow') }}
       </p>

@@ -29,7 +29,7 @@ useScrollAnimations(root, ({ revealUp }) => {
 </script>
 
 <template>
-  <section ref="root" class="bg-white px-6 py-10 md:py-16 lg:py-20 sm:px-10">
+  <section ref="root" class="bg-white px-4 py-10 sm:px-6 md:py-16 lg:py-20">
     <div class="mx-auto max-w-175 rounded-2xl bg-cloud p-8 sm:p-12">
       <h2
         class="gs-hidden weather-reveal font-heading font-medium tracking-tight text-night"

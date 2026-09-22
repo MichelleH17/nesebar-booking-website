@@ -16,7 +16,7 @@ useScrollAnimations(root, ({ revealUp }) => {
 </script>
 
 <template>
-  <section v-if="photos.length" ref="root" class="bg-white px-6 py-10 md:py-16 lg:py-20 sm:px-10">
+  <section v-if="photos.length" ref="root" class="bg-white px-4 py-10 sm:px-6 md:py-16 lg:py-20">
     <div class="mx-auto max-w-6xl">
       <h2 class="gs-hidden font-heading text-4xl font-medium tracking-tight text-night sm:text-5xl">
         {{ st('home.galleryHeading') }}

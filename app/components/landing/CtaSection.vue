@@ -17,7 +17,7 @@ useScrollAnimations(root, ({ revealUp }) => {
       <div class="absolute inset-0 bg-gradient-to-t from-night/85 via-night/35 to-night/10" />
     </div>
 
-    <div class="mx-auto max-w-6xl px-6 py-10 md:py-16 lg:py-20 sm:px-10">
+    <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-16 lg:py-20">
       <div class="gs-hidden cta-content mx-auto flex max-w-3xl flex-col items-center gap-5 text-center">
       <h2 class="font-heading text-4xl font-medium tracking-tight text-white sm:text-5xl">
         {{ st('home.ctaHeading') }}
