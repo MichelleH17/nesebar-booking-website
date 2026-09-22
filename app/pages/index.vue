@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { Apartment } from '~~/shared/types/apartment'
+import type { PublicApartment } from '~~/shared/types/apartment'
 import type { Photo } from '~~/shared/types/photo'
 import type { Weather } from '~~/shared/types/weather'
 
-const { data: apartments } = await useFetch<Apartment[]>('/api/apartments', {
+const { data: apartments } = await useFetch<PublicApartment[]>('/api/apartments', {
   default: () => [],
 })
 const { data: photos } = await useFetch<Photo[]>('/api/photos', {

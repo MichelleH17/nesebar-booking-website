@@ -6,7 +6,7 @@ description: Use when writing or changing any feature code in the nessebar repo 
 # Nessebar Development Conventions
 
 ## Overview
-Private family reservation site for apartments 15B/16B in Nessebar. Design spec (single source of truth for behavior): `docs/superpowers/specs/2026-07-06-nessebar-family-reservations-design.md`. **Never git commit or push in this repo.**
+Private family reservation site for apartments 15B/16B in Nessebar. Design spec (single source of truth for behavior): `docs/superpowers/specs/2026-07-06-nessebar-family-reservations-design.md` — kept locally, `docs/` is gitignored and not part of this repository. Confirm with the user before committing or pushing.
 
 ## Non-negotiable rules
 - **Security is server-side.** Roles: `guest` (logged-in friend), `family`, `admin`. Every API route uses `requireAuth` / `requireFamily` (403 for guests) / `requireAdmin` from `server/utils/session.ts`; non-admins may only modify reservations where `userId` matches their session. Guests get anonymized reservation reads (others' rows = apartment + dates only — no names, colors, notes, prices) and no stats/occupancy. Page middleware is UX, not security.

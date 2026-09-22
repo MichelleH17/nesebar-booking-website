@@ -11,3 +11,6 @@ export interface Apartment {
   priceHidden: boolean
   hidden: boolean
 }
+
+/** What /api/apartments returns to callers without a session — no pricing columns. */
+export type PublicApartment = Omit<Apartment, 'nightlyRate' | 'perPersonPricing' | 'priceHidden'>

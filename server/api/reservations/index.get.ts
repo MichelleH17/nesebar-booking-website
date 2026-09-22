@@ -1,9 +1,7 @@
 import { eq } from 'drizzle-orm'
 import { useDb } from '~~/server/db'
 import { reservations, users } from '~~/server/db/schema'
-
-// Grey used for guest/friend stays (matches the seeded "Host" account colour).
-const GUEST_COLOR = '#9AA0A6'
+import { shapeReservations } from '~~/shared/utils/visibility'
 
 export default defineEventHandler(async (event) => {
   const user = await requireAuth(event)
@@ -33,27 +31,5 @@ export default defineEventHandler(async (event) => {
     .leftJoin(users, eq(reservations.userId, users.id))
     .all()
 
-  if (user.role === 'guest') {
-    return rows
-      .filter((r) => r.userId === user.id || r.status === 'active')
-      .map((r) => {
-        if (r.userId === user.id) {
-          const { userName, userColor, ...rest } = r
-          return { ...rest, user: { name: userName, color: r.forGuest ? GUEST_COLOR : userColor } }
-        }
-        return {
-          id: r.id,
-          apartmentId: r.apartmentId,
-          arrival: r.arrival,
-          departure: r.departure,
-          status: r.status,
-          anonymized: true,
-        }
-      })
-  }
-
-  return rows.map((r) => {
-    const { userName, userColor, ...rest } = r
-    return { ...rest, user: { name: userName, color: r.forGuest ? GUEST_COLOR : userColor } }
-  })
+  return shapeReservations(rows, user)
 })

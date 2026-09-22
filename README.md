@@ -21,6 +21,9 @@ npm install
 
 Copy `.env.example` to `.env` and fill in the values (session password, SMTP credentials, mail recipient, seed passwords).
 
+`SEED_ADMIN_PASSWORD` and `SEED_FAMILY_PASSWORD` are required — the seed script refuses to
+run without them rather than falling back to a password that lives in this repository.
+
 Apply the database schema and seed local dev data:
 
 ```bash

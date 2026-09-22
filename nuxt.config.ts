@@ -49,7 +49,8 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
-    sessionPassword: '', // NUXT_SESSION_PASSWORD
+    // The session secret is not declared here — nuxt-auth-utils owns `session.password`
+    // and reads it from NUXT_SESSION_PASSWORD itself.
     smtpHost: '',        // NUXT_SMTP_HOST
     smtpPort: '465',     // NUXT_SMTP_PORT
     smtpUser: '',        // NUXT_SMTP_USER

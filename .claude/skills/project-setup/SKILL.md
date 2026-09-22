@@ -6,7 +6,7 @@ description: Use when scaffolding, installing dependencies, configuring modules,
 # Nessebar Project Setup
 
 ## Overview
-How to take this repo from the bare Nuxt 4 scaffold to a runnable app. Spec: `docs/superpowers/specs/2026-07-06-nessebar-family-reservations-design.md`. **Never git commit or push in this repo** — private project on a company GitHub identity.
+How to take this repo from the bare Nuxt 4 scaffold to a runnable app. Spec: `docs/superpowers/specs/2026-07-06-nessebar-family-reservations-design.md` — kept locally, `docs/` is gitignored and not part of this repository. Confirm with the user before committing or pushing.
 
 ## Dependencies (all free/open-source)
 ```bash

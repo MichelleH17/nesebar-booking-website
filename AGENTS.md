@@ -2,7 +2,7 @@
 
 Private family reservation site for two apartments (15B, 16B) in Nessebar, Bulgaria. Nuxt 4, Tailwind CSS 4, GSAP + ScrollTrigger, nuxt-auth-utils, SQLite via libSQL (Turso in prod) + Drizzle, Nodemailer. Czech-only UI. Free/open-source only — no paid services.
 
-Git commits/pushes use the personal `MichelleH17` GitHub account (remote: `github.com/MichelleH17/nesebar-booking-website`, private), not the company identity. Confirm with the user before pushing.
+Confirm with the user before pushing.
 
 Project skills (invoke before working in their area):
 - `project-setup` — dependencies, config, DB init/migrations/seed, env vars

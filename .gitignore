@@ -23,9 +23,6 @@ logs
 .env.*
 !.env.example
 
-# Real family names/emails and login passwords — local dev only, never committed
-server/db/seed.ts
-
 # Internal planning docs (specs/plans/briefs/reports/reviews) — local only
 docs/
 

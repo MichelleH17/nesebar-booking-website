@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { Apartment } from '~~/shared/types/apartment'
+import type { PublicApartment } from '~~/shared/types/apartment'
 
 defineProps<{
-  apartments: Apartment[]
+  apartments: PublicApartment[]
 }>()
 
 const { loggedIn } = useUserSession()
