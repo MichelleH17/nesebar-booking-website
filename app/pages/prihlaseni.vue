@@ -46,7 +46,7 @@ async function onDemo() {
 <template>
   <div class="grid flex-1 bg-white lg:grid-cols-2">
     <!-- Form -->
-    <div class="flex items-center justify-center px-6 py-16 sm:px-10">
+    <div class="flex items-center justify-center px-4 py-16 sm:px-6">
       <div class="w-full max-w-sm">
         <p class="font-sans text-xs font-semibold uppercase tracking-[0.3em] text-sea-deep">
           {{ st('home.eyebrow') }}
@@ -110,7 +110,9 @@ async function onDemo() {
         </form>
 
         <div class="mt-4 border-t border-cloud pt-4">
-          <UiBaseButton type="button" variant="night-outline" :disabled="demoLoading" @click="onDemo">
+          <p class="font-sans text-sm font-medium text-night">{{ t('demo.title') }}</p>
+          <p class="mt-1 font-sans text-sm text-stone">{{ t('demo.intro') }}</p>
+          <UiBaseButton type="button" variant="night-outline" class="mt-3" :disabled="demoLoading" @click="onDemo">
             {{ demoLoading ? t('login.submitting') : t('demo.tryButton') }}
           </UiBaseButton>
         </div>

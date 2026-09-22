@@ -19,11 +19,17 @@ useScrollAnimations(root, ({ revealUp }) => {
 </script>
 
 <template>
-  <section ref="root" class="bg-white px-6 py-10 md:py-16 lg:py-20 sm:px-10">
+  <section ref="root" class="bg-white px-4 py-10 sm:px-6 md:py-16 lg:py-20">
     <div class="mx-auto max-w-6xl">
       <h2 class="gs-hidden font-heading text-4xl font-medium tracking-tight text-night sm:text-5xl">
         {{ st('home.apartmentsHeading') }}
       </h2>
+      <p class="gs-hidden mt-3 max-w-xl font-sans text-stone">
+        {{ t('apartments.intro') }}
+      </p>
+      <p class="gs-hidden mt-2 max-w-xl font-sans text-stone">
+        {{ t('apartments.locationText') }}
+      </p>
       <div class="mt-10 grid gap-6 sm:grid-cols-2">
         <component
           :is="loggedIn ? NuxtLink : 'div'"

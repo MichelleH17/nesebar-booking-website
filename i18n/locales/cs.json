@@ -14,7 +14,9 @@
     "closeMenu": "Zavřít menu"
   },
   "footer": {
-    "tagline": "Náš kousek Bulharska • Nesebar • {year}"
+    "about": "Místo, které vzniklo pro naši rodinu.",
+    "aboutText": "Tento web slouží pro jednodušší plánování společných pobytů v Nesebaru. Dva apartmány, několik členů rodiny a spousta termínů znamenaly jediné - potřebovali jsme mít přehled na jednom místě.",
+    "label": "Rodinný rezervační systém"
   },
   "common": {
     "book": "Rezervovat pobyt",
@@ -22,29 +24,39 @@
     "discoverArea": "Objevte okolí",
     "back": "Zpět"
   },
-  "hero": {
-    "eyebrow": "Nesebar · Bulharsko",
-    "line1": "Náš kousek",
-    "line2": "Bulharska",
-    "intro": "Dva byty v Nesebaru, kousek od moře, kde se scházíme jako rodina. Vyberte si termín a přijeďte."
-  },
   "apartments": {
-    "heading": "Naše dva byty",
+    "intro": "Dva apartmány vedle sebe, jeden společný balkon a prostor pro společné chvíle.",
+    "locationText": "Apartmány 15B a 16B se nacházejí vedle sebe v komplexu Odysey. Oba mají výhled na velký centrální bazén a jsou propojené společným balkonem.",
     "upTo": "Až {count} osob",
     "viewAvailability": "Zobrazit dostupnost v kalendáři →"
   },
+  "balcony": {
+    "heading": "Jeden balkon, dva apartmány",
+    "text": "Apartmány 15B a 16B jsou propojené společným balkonem s výhledem na bazén. Ideální místo pro ranní kávu, večerní posezení nebo plánování dalšího dne."
+  },
+  "booking": {
+    "heading": "Kdo přijede a kdy?",
+    "intro": "Rezervační kalendář nám pomáhá udržet přehled o tom, kdo je kdy v Nesebaru a který apartmán využívá.",
+    "text": "Stačí vytvořit rezervaci a všichni mají aktuální přehled o obsazenosti obou apartmánů.",
+    "feature1Title": "Jasný přehled",
+    "feature1Text": "Na první pohled vidíme, kdy je který apartmán obsazený a kdy je volný.",
+    "feature2Title": "Jednoduché rezervace",
+    "feature2Text": "Termín, apartmán a počet osob. Vše potřebné na jednom místě.",
+    "feature3Title": "Pro celou rodinu",
+    "feature3Text": "Každý člen rodiny má přístup k informacím, které potřebuje."
+  },
+  "roles": {
+    "heading": "Každý má svůj přístup",
+    "text": "Různí členové rodiny potřebují různé možnosti. Proto má aplikace několik úrovní přístupu – od správy celého systému až po jednoduchý přehled rezervací.",
+    "adminTitle": "Správce",
+    "adminText": "Správa apartmánů, rezervací a obsahu.",
+    "familyTitle": "Člen rodiny",
+    "familyText": "Vytváření a úprava rezervací.",
+    "readonlyTitle": "Pouze pro čtení",
+    "readonlyText": "Přehled rezervací a informací bez možnosti provádět změny."
+  },
   "gallery": {
     "heading": "Nesebar v obrazech"
-  },
-  "cta": {
-    "heading": "Těšíme se na vás v Nesebaru",
-    "introLoggedIn": "Podívejte se, co dělat v okolí, nebo rovnou naplánujte svůj pobyt.",
-    "introGuest": "Podívejte se, co dělat v okolí, nebo se rovnou přihlaste a naplánujte svůj pobyt."
-  },
-  "city": {
-    "line1": "Nesebar a jeho",
-    "line2": "okolí",
-    "intro": "Naše staré město leží na malém poloostrově a je zapsané v seznamu UNESCO — kamenné uličky, dřevěné domy a kostely staré stovky let. Kolem dokola písečné pláže, výlety podél pobřeží a všechno, co potřebujete vědět pro klidný pobyt."
   },
   "weather": {
     "heading": "Počasí",
@@ -61,7 +73,7 @@
     "intro": "Když se chcete podívat dál, kolem je spousta míst na jednodenní výlet."
   },
   "info": {
-    "heading": "Praktické info"
+    "heading": "Než vyrazíte"
   },
   "reservation": {
     "newTitle": "Nová rezervace",
@@ -148,8 +160,8 @@
     "guestOf": "host - zodpovídá {name}"
   },
   "login": {
-    "title": "Vítejte zpátky",
-    "intro": "Přihlaste se a naplánujte si pobyt.",
+    "title": "Vítejte zpět",
+    "intro": "Přihlaste se a spravujte své rezervace.",
     "email": "E-mail",
     "password": "Heslo",
     "showPassword": "Zobrazit heslo",
@@ -159,6 +171,8 @@
   },
   "demo": {
     "banner": "Ukázkový režim — jen pro prohlížení, změny se neukládají.",
+    "title": "Demo účet",
+    "intro": "Prohlédněte si aplikaci v režimu pouze pro čtení. Můžete procházet rezervace a obsah webu bez možnosti provádět změny.",
     "tryButton": "Vyzkoušet ukázku"
   }
 }

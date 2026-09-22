@@ -25,6 +25,9 @@ const CTA_FIELDS = [
   <div class="space-y-8">
     <AdminSiteTextEditor title="Hero sekce" :fields="HERO_FIELDS" section-key="home.hero" />
     <AdminSiteTextEditor title="Byty" :fields="APARTMENTS_FIELDS" section-key="home.apartments" />
+    <AdminSiteTextEditor title="Balkon" :fields="[]" section-key="home.balcony" />
+    <AdminSiteTextEditor title="Rezervace" :fields="[]" section-key="home.booking" />
+    <AdminSiteTextEditor title="Role" :fields="[]" section-key="home.roles" />
     <AdminSiteTextEditor title="Galerie" :fields="GALLERY_FIELDS" section-key="home.gallery" />
     <AdminSiteTextEditor title="CTA" :fields="CTA_FIELDS" section-key="home.cta" />
   </div>

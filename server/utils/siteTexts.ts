@@ -5,13 +5,13 @@ import type { SiteText } from '~~/shared/types/siteText'
 
 export const SITE_TEXT_DEFAULTS: Record<string, SiteText> = {
   'home.eyebrow': { cs: 'Nesebar · Bulharsko', en: 'Nessebar · Bulgaria' },
-  'home.line1': { cs: 'Náš kousek', en: 'Our corner' },
-  'home.line2': { cs: 'Bulharska', en: 'of Bulgaria' },
+  'home.line1': { cs: 'Místo, kam se', en: 'A place we' },
+  'home.line2': { cs: 'rádi vracíme', en: 'love coming back to' },
   'home.intro': {
-    cs: 'Dva byty v Nesebaru, kousek od moře, kde se scházíme jako rodina. Vyberte si termín a přijeďte.',
-    en: 'Two apartments in Nessebar, a short walk from the sea, where we gather as a family. Pick your dates and come.',
+    cs: 'Dva apartmány v Nesebaru. Jeden společný prostor pro rodinu.',
+    en: 'Two apartments in Nessebar. One shared space for the family.',
   },
-  'home.apartmentsHeading': { cs: 'Naše dva byty', en: 'Our two apartments' },
+  'home.apartmentsHeading': { cs: 'Naše apartmány', en: 'Our apartments' },
   'home.galleryHeading': { cs: 'Nesebar v obrazech', en: 'Nessebar in pictures' },
   'home.ctaHeading': { cs: 'Těšíme se na vás v Nesebaru', en: 'We look forward to seeing you in Nessebar' },
   'home.ctaIntroGuest': {
@@ -25,8 +25,8 @@ export const SITE_TEXT_DEFAULTS: Record<string, SiteText> = {
   'area.line1': { cs: 'Nesebar a jeho', en: 'Nessebar and its' },
   'area.line2': { cs: 'okolí', en: 'surroundings' },
   'area.intro': {
-    cs: 'Naše staré město leží na malém poloostrově a je zapsané v seznamu UNESCO — kamenné uličky, dřevěné domy a kostely staré stovky let. Kolem dokola písečné pláže, výlety podél pobřeží a všechno, co potřebujete vědět pro klidný pobyt.',
-    en: 'Our old town sits on a small peninsula and is a UNESCO World Heritage site — stone lanes, wooden houses and churches hundreds of years old. All around: sandy beaches, trips along the coast and everything you need for a calm stay.',
+    cs: 'Naše apartmány leží v novější části Nesebaru, v komplexu Odysey, jen kousek od moře. Kolem nás najdete písečné pláže, restaurace, obchody i místa pro výlety podél pobřeží. A když se vydáte do starého města, čekají vás kamenné uličky, dřevěné domy a kostely staré stovky let.',
+    en: "Our apartments are in the newer part of Nessebar, in the Odysey complex, just a short walk from the sea. Around us you'll find sandy beaches, restaurants, shops and spots for trips along the coast. And if you head to the old town, cobbled lanes, wooden houses and churches hundreds of years old await.",
   },
 }
 

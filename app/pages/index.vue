@@ -30,6 +30,9 @@ const { isVisible } = useSectionVisibility()
   <div class="bg-white">
     <LandingHeroSection v-if="isVisible('home.hero')" :image-url="heroImage" />
     <LandingApartmentsIntro v-if="isVisible('home.apartments')" :apartments="(apartments ?? []).filter(a => !a.hidden)" />
+    <LandingBalconySection v-if="isVisible('home.balcony')" />
+    <LandingBookingSection v-if="isVisible('home.booking')" />
+    <LandingRolesSection v-if="isVisible('home.roles')" />
     <GuideWeatherWidget :weather="weather" home />
     <LandingGallerySection v-if="isVisible('home.gallery')" :photos="galleryPhotos" />
     <LandingCtaSection v-if="isVisible('home.cta')" />

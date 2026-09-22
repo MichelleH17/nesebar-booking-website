@@ -14,7 +14,9 @@
     "closeMenu": "Close menu"
   },
   "footer": {
-    "tagline": "Our little piece of Bulgaria • Nessebar • {year}"
+    "about": "A place made for our family.",
+    "aboutText": "This site is for making planning our stays in Nessebar easier. Two apartments, several family members and plenty of dates meant one thing - we needed everything in one place.",
+    "label": "Family reservation system"
   },
   "common": {
     "book": "Book a stay",
@@ -22,29 +24,39 @@
     "discoverArea": "Discover the area",
     "back": "Back"
   },
-  "hero": {
-    "eyebrow": "Nessebar · Bulgaria",
-    "line1": "Our little",
-    "line2": "piece of Bulgaria",
-    "intro": "Two apartments in Nessebar, a short walk from the sea, where we gather as a family. Pick a date and come over."
-  },
   "apartments": {
-    "heading": "Our two apartments",
+    "intro": "Two apartments side by side, one shared balcony and room for time together.",
+    "locationText": "Apartments 15B and 16B sit side by side in the Odysey complex. Both have a view of the large central pool and are connected by a shared balcony.",
     "upTo": "Up to {count} people",
     "viewAvailability": "View availability in the calendar →"
   },
+  "balcony": {
+    "heading": "One balcony, two apartments",
+    "text": "Apartments 15B and 16B are connected by a shared balcony overlooking the pool. A good spot for morning coffee, an evening chat or planning the next day."
+  },
+  "booking": {
+    "heading": "Who's coming, and when?",
+    "intro": "A reservation calendar helps us keep track of who's in Nessebar and which apartment they're using.",
+    "text": "Just create a reservation and everyone has an up-to-date view of both apartments.",
+    "feature1Title": "A clear overview",
+    "feature1Text": "At a glance, we see which apartment is occupied and which is free.",
+    "feature2Title": "Simple reservations",
+    "feature2Text": "Dates, apartment and number of people. Everything you need in one place.",
+    "feature3Title": "For the whole family",
+    "feature3Text": "Every family member has access to the information they need."
+  },
+  "roles": {
+    "heading": "Everyone has their own access",
+    "text": "Different family members need different options. That's why the app has several access levels — from managing the whole system to a simple overview of reservations.",
+    "adminTitle": "Admin",
+    "adminText": "Manages apartments, reservations and content.",
+    "familyTitle": "Family member",
+    "familyText": "Creates and edits reservations.",
+    "readonlyTitle": "Read only",
+    "readonlyText": "Views reservations and information without making changes."
+  },
   "gallery": {
     "heading": "Nessebar in pictures"
-  },
-  "cta": {
-    "heading": "We look forward to seeing you in Nessebar",
-    "introLoggedIn": "See what there is to do nearby, or go ahead and plan your stay.",
-    "introGuest": "See what there is to do nearby, or log in and plan your stay."
-  },
-  "city": {
-    "line1": "Nessebar and its",
-    "line2": "surroundings",
-    "intro": "Our old town sits on a small peninsula and is a UNESCO World Heritage Site — cobbled lanes, wooden houses and churches hundreds of years old. All around are sandy beaches, trips along the coast, and everything you need to know for a relaxed stay."
   },
   "weather": {
     "heading": "Weather",
@@ -61,7 +73,7 @@
     "intro": "When you want to venture further, there are plenty of spots nearby for a day trip."
   },
   "info": {
-    "heading": "Practical info"
+    "heading": "Before you go"
   },
   "reservation": {
     "newTitle": "New reservation",
@@ -149,7 +161,7 @@
   },
   "login": {
     "title": "Welcome back",
-    "intro": "Log in and plan your stay.",
+    "intro": "Log in to manage your reservations.",
     "email": "Email",
     "password": "Password",
     "showPassword": "Show password",
@@ -159,6 +171,8 @@
   },
   "demo": {
     "banner": "Demo mode — view only, changes aren't saved.",
+    "title": "Demo account",
+    "intro": "Take a look at the app in read-only mode. You can browse reservations and site content without making changes.",
     "tryButton": "Try the demo"
   }
 }

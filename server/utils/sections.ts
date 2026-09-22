@@ -4,6 +4,9 @@
 export const SECTION_KEYS = [
   'home.hero',
   'home.apartments',
+  'home.balcony',
+  'home.booking',
+  'home.roles',
   'home.gallery',
   'home.cta',
   'area.hero',
